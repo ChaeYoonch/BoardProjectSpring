@@ -36,6 +36,12 @@ spring:
       maxRequestSize: 60MB # max-request-size 와 동일 | 60 메가바이트
       fileSizeThreshold: 30MB # file-size-threshold 와 동일 | 30 메가바이트 까지는 메모리에서 그 이상은 임시 폴더에 저장
 
+# 파일 업로드 경로 설정
+file:
+  upload:
+    path: D:/uploads
+    url: "/upload/" # 정적 경로 설정
+
 # 로거 설정
 logging:
   level:
