@@ -12,6 +12,7 @@ public class MvcConfig implements WebMvcConfigurer { // MVC 기본 설정
 
     /**
      * <input type="hidden" name="_method" value="PATCH"> -> PATCH 방식으로 요청
+     * ?_method=DELETE
      * @return
      */
     @Bean
