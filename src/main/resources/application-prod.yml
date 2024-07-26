@@ -1,0 +1,10 @@
+spring:
+  # JPA 설정
+  jpa:
+    hibernate:
+      ddlAuto: create # ddl-auto 와 동일
+
+  # 라이브 리로드 설정
+  devtools:
+    livereload:
+      enabled: false # 실제 배포 서버 false 로 설정해야 함!
