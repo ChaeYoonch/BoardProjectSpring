@@ -5,3 +5,11 @@ spring:
   # 데이터 베이스 설정
   datasource:
     driverClassName: oracle.jdbc.driver.OracleDriver # driver-class-name 와 동일 | 카멜 케이스 형태로 작성한 것
+    url: jdbc:oracle:thin:@${db.host}:${db.port}:XE # @localhost -> @${db.host} : 1521 -> ${db.port} | 환경 변수로 설정
+    username: ${db.username} # 환경 변수로 설정
+    password: ${db.password} # 환경 변수로 설정
+
+  # JPA 설정
+  jpa:
+    properties:
+      hibernate:
