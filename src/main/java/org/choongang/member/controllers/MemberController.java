@@ -18,4 +18,9 @@ public class MemberController {
     public String joinPs() { // 회원가입 프로세스
         return "redirect:/member/login";
     }
+
+    @GetMapping("/login")
+    public String login() { // 로그인
+        return "front/member/login";
+    }
 }
