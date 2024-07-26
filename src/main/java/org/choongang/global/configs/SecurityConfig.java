@@ -9,7 +9,8 @@ import org.springframework.security.web.SecurityFilterChain;
 public class SecurityConfig {
 
     @Bean // 스프링 관리 객체로 설정
-    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception { // 반환값 = http
 
+        return http.build();
     }
 }
