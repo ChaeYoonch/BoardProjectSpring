@@ -18,3 +18,8 @@ spring:
         use_sql_comments: true # 설명
     hibernate:
       ddlAuto: create # ddl-auto 와 동일
+
+  # 라이브 리로드 설정
+  devtools:
+    livereload:
+      enabled: true # 실제 배포 서버는 false 로 설정해야 함!
