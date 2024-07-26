@@ -12,4 +12,9 @@ spring:
   # 정적 자원 경로 설정 (CSS, JS, 이미지) - static 경로로 설정
   web:
     resources:
-      staticLocations: classpath:/static # static-locations 와 동일
+      staticLocations: classpath:/static/ # static-locations 와 동일
+
+  # 타임 리프 설정
+  thymeleaf:
+    cache: true
+    prefix: classpath:/templates/
