@@ -24,6 +24,11 @@ spring:
     livereload:
       enabled: true # 실제 배포 서버는 false 로 설정해야 함!
 
+  # 정적 자원 경로 설정 (CSS, JS, 이미지) - static 경로로 설정
+  web:
+    resources:
+      staticLocations: file:src/main/resources/static # static-locations 와 동일
+
 # 로거 설정
 logging:
   level:
