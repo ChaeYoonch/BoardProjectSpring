@@ -1,2 +1,7 @@
 server:
   port: 3000
+
+spring:
+  # 데이터 베이스 설정
+  datasource:
+    driverClassName: oracle.jdbc.driver.OracleDriver # driver-class-name 와 동일 | 카멜 케이스 형태로 작성한 것
