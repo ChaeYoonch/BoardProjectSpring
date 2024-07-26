@@ -23,3 +23,8 @@ spring:
   devtools:
     livereload:
       enabled: true # 실제 배포 서버는 false 로 설정해야 함!
+
+# 로거 설정
+logging:
+  level:
+    org.hibernate.type: trace
