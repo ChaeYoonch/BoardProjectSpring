@@ -1,5 +1,9 @@
 package org.choongang.global.configs;
 
-public class FileProperties {
+import lombok.Data;
 
+@Data
+public class FileProperties {
+    private String path;
+    private String url;
 }
