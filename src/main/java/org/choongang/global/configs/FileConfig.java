@@ -7,8 +7,8 @@ import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @Configuration
-@EnableConfigurationProperties(FileProperties.class)
 @RequiredArgsConstructor
+@EnableConfigurationProperties(FileProperties.class)
 public class FileConfig implements WebMvcConfigurer {
 
     private final FileProperties properties;
