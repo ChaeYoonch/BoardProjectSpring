@@ -18,8 +18,9 @@ public interface PasswordValidator {
      * @return
      */
     default boolean numberCheck(String password) { // 숫자 체크
-
-        return false;
+        return password.matches(".*\\d+.*"); // 아래 2줄과 동일
+        /* boolean matched = password.matches(".*\\d+.*"); // matches = 숫자 포함 여부 체크 | ".*[0-9]" = ".*\\d+.*"
+        return matched; */
     }
 
     /**
