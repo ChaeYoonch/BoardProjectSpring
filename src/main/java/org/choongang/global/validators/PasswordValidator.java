@@ -9,7 +9,7 @@ public interface PasswordValidator {
      */
     default boolean alphaCheck(String password, boolean caseInsensitive) { // 알파벳 체크
         if (caseInsensitive) { // 대,소문자 구분 없이 알파벳 체크
-            return password.matches(".*[a-zA-Z].*");
+            return password.matches(".*[a-zA-Z]+.*"); // + : 1개 이상 이라는 의미
         }
         return false;
     }
