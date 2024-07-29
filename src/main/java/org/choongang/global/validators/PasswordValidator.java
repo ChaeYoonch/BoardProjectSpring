@@ -29,6 +29,7 @@ public interface PasswordValidator {
      * @return
      */
     default boolean specialCharsCheck(String password) { // 특수 문자 체크
+        String pattern = ".*[].*";
 
         return false;
     }
