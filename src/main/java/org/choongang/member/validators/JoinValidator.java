@@ -13,6 +13,8 @@ public class JoinValidator implements Validator {
 
     @Override
     public void validate(Object target, Errors errors) {
-
+        if(errors.hasErrors()) { // 실패했는지 아닌지 확인 - hasErrors
+            return;
+        }
     }
 }
