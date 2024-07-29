@@ -7,7 +7,7 @@ import jakarta.validation.constraints.Size;
 import lombok.Data;
 
 @Data
-public class RequestJoin { // 사용자가 작성한 데이터 전달 - 커맨드 객체 => 데이터가 넘어올 때 자동 생성됨
+public class RequestJoin { // 사용자가 작성한 데이터 전달 - 커맨드 객체 정의하는 곳 | 커맨드 객체 = 데이터가 넘어올 때 자동 생성됨
     @NotBlank @Email // 필수 항목 | 이메일
     private String email; // 이메일
 
