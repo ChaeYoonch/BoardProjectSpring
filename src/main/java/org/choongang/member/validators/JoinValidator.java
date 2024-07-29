@@ -39,6 +39,11 @@ public class JoinValidator implements Validator, PasswordValidator, MobileValida
         String confirmPassword = form.getConfirmPassword();
         String mobile = form.getMobile();
 
+        /* 1. 이미 가입된 회원인지 체크 */
+        if (memberRepository.exists(email)) { // 이미 존재하는 이메일인 경우
+
+        }
+
         /* 2. 비밀번호 & 비밀번호 확인 일치 여부 체크 */
         if (!password.equals(confirmPassword)) { // password 와 confirmPassword 가 일치하지 않을 경우
             errors.rejectValue("confirmPassword", "Mismatch.password"); // validations.properties 의 값 연동
