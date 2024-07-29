@@ -7,7 +7,6 @@
         <h1 th:text="#{회원가입}"></h1>
         <form name="frmRegist" method="POST" th:action="@{/member/join}" autocomplete="off" th:object="${requestJoin}"> <!-- 커맨드 객체 연동 -->
             <div class="error global" th:each="err : ${#fields.globalErrors()}" th:text="${err}"></div> <!-- 에러 출력 & 필드 연동 -->
-
             <dl>
                 <dt th:text="#{이메일}"></dt>
                 <dd>
@@ -15,7 +14,6 @@
                     <div class="error" th:each="err : ${#fields.errors('email')}" th:text="${err}"></div>
                 </dd>
             </dl>
-
             <dl>
                 <dt th:text="#{비밀번호}"></dt>
                 <dd>
@@ -23,7 +21,6 @@
                     <div class="error" th:each="err : ${#fields.errors('password')}" th:text="${err}"></div>
                 </dd>
             </dl>
-
             <dl>
                 <dt th:text="#{비밀번호_확인}"></dt>
                 <dd>
@@ -31,7 +28,6 @@
                     <div class="error" th:each="err : ${#fields.errors('confirmPassword')}" th:text="${err}"></div>
                 </dd>
             </dl>
-
             <dl>
                 <dt th:text="#{회원명}"></dt>
                 <dd>
@@ -39,7 +35,6 @@
                     <div class="error" th:each="err : ${#fields.errors('userName')}" th:text="${err}"></div>
                 </dd>
             </dl>
-
             <dl>
                 <dt th:text="#{휴대전화번호}"></dt>
                 <dd>
@@ -47,7 +42,6 @@
                     <div class="error" th:each="err : ${#fields.errors('mobile')}" th:text="${err}"></div>
                 </dd>
             </dl>
-
             <div class="terms">
                 <div class="tit" th:text="#{회원가입_약관}"></div>
                 <div class="terms-contents">회원가입 약관!</div>
@@ -57,7 +51,6 @@
 
                 <div class="error" th:each="err : ${#fields.errors('agree')}" th:text="${err}"></div>
             </div>
-
             <div class="buttons">
                 <button type="reset" th:text="#{다시입력}"></button>
                 <button type="submit" th:text="#{가입하기}"></button>
