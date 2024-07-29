@@ -18,5 +18,11 @@ public class JoinValidator implements Validator {
         if(errors.hasErrors()) { // 실패했는지 아닌지 확인 - hasErrors
             return;
         }
+
+        /**
+         * 1. 이미 가입된 회원인지 체크
+         * 2. 비밀번호 & 비밀번호 확인 일치 여부 체크
+         * 3.
+         */
     }
 }
