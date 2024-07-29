@@ -13,6 +13,7 @@ public interface MobileValidator { // 전화번호
          */
 
         mobile = mobile.replaceAll("\\D", ""); // 1. 숫자만 남긴다.
+        String pattern = "01[016]\\d{3,4}\\d{4}"; // 010, 011, 016 | 3 ~ 4자리 | 4자리
 
         return false;
     }
