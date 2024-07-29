@@ -27,6 +27,9 @@ public class JoinValidator implements Validator {
          */
 
         RequestJoin form = (RequestJoin) target;
+        String email = form.getEmail();
+        String password = form.getPassword();
+        String confirmPassword = form.getConfirmPassword();
 
         /* 2. 비밀번호 & 비밀번호 확인 일치 여부 체크 */
     }
