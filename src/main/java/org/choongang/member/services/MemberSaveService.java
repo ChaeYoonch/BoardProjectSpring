@@ -11,6 +11,7 @@ import org.modelmapper.ModelMapper;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.util.StringUtils;
 
 import java.util.List;
 
@@ -35,6 +36,13 @@ public class MemberSaveService {
     }
 
     public void save(Member member, List<Authority> authorities) { // 매개 변수 2개
+
+        // 휴대전화번호 숫자만 기록
+        String mobile = member.getMobile(); // mobile 1
+        if (StringUtils.hasText(mobile)) { // 위의 mobile 1
+            mobile = mobile.replaceAll("\\D", "");
+            member.setMobile(mobile); // mobile 2
+        }
 
         memberRepository.saveAndFlush(member);
         /* 권한 추가 & 수정 S */
