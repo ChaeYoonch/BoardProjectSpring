@@ -11,8 +11,16 @@
             <dl>
                 <dt th:text="#{이메일}"></dt>
                 <dd>
-                    <input type="text" name="email" th:field="*{email}"> <!-- th:field 써야 인식 가능 -->
+                    <input type="text" name="email" th:field="*{email}"> <!-- th:field 써야 인식 가능 | * : RequestJoin 의 커맨드 객체 연동용-->
                     <div class="error" th:each="err : ${#fields.errors('email')}" th:text="${err}"></div>
+                </dd>
+            </dl>
+
+            <dl>
+                <dt th:text="#{비밀번호}"></dt>
+                <dd>
+                    <input type="password" name="password" th:field="*{password}">
+                    <div class="error" th:each="err : ${#fields.errors('password')}" th:text="${err}"></div>
                 </dd>
             </dl>
         </form>
