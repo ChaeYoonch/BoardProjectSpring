@@ -2,12 +2,15 @@ package org.choongang.member.services;
 
 import lombok.RequiredArgsConstructor;
 import org.choongang.member.controllers.RequestJoin;
+import org.choongang.member.entities.Authorities;
 import org.choongang.member.entities.Member;
 import org.choongang.member.repositories.AuthoritiesRepository;
 import org.choongang.member.repositories.MemberRepository;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
 
 @Service
 @RequiredArgsConstructor
@@ -25,7 +28,7 @@ public class MemberSaveService {
 
     }
 
-    public void save(Member member) {
+    public void save(Member member, List<Authorities> authorities) { // 매개 변수 2개
 
     }
 }
