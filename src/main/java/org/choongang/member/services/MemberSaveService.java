@@ -49,7 +49,6 @@ public class MemberSaveService {
                                                              .build()).toList(); // 새롭게 채움 (갱신)
 
             authoritiesRepository.saveAllAndFlush(items);
-        }
-        /* 권한 추가 & 수정 E */
+        }  /* 권한 추가 & 수정 E */
     }
 }
