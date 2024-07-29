@@ -18,6 +18,8 @@
         <th:block layout:fragment="addScript"></th:block> <!-- controller 없이 연동하는 경우 fragment 로 연결 -->
     </head>
     <body>
-        <header th:replace="~{front/outlines/_header::common}"></header>
+        <header th:replace="~{front/outlines/_header::common}"></header> <!-- _header.html 의 common 으로 정보 치환 -->
+        <main layout:fragment="content"></main>
+        <footer th:replace="~{footer/outlines/_header::common}"></footer> <!-- _footer.html 의 common 으로 정보 치환 -->
     </body>
 </html>
