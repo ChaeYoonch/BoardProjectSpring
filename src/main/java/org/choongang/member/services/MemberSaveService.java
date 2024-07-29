@@ -40,13 +40,13 @@ public class MemberSaveService {
 
         if (authorities != null) { // 객체가 아닌 경우에만 비움
             List<Authorities> items = authoritiesRepository.findByMember(member); // 값을 가져온 다음 변경
-            authoritiesRepository.deleteAll(items); // items 가져온 다음 비움
+            authoritiesRepository.deleteAll(items); // items 가져온 다음 비움 | 기존의 것 비움
             authoritiesRepository.flush();
 
             items = authorities.stream().map(a -> Authorities.builder()
                                                              .member(member)
                                                              .authority(a)
-                                                             .build()).toList();
+                                                             .build()).toList(); // 새롭게 채움 (갱신)
         }
     }
 }
