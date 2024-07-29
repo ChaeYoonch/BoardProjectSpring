@@ -42,6 +42,11 @@ public class MemberSaveService {
             List<Authorities> items = authoritiesRepository.findByMember(member); // 값을 가져온 다음 변경
             authoritiesRepository.deleteAll(items); // items 가져온 다음 비움
             authoritiesRepository.flush();
+
+            items = authorities.stream().map(a -> Authorities.builder()
+                                                             .member(member)
+                                                             .authority(a)
+                                                             .build()).toList();
         }
     }
 }
