@@ -30,7 +30,7 @@ public class MemberController {
         if (errors.hasErrors()) { // error 가 있으면
             return "front/member/join"; // 여기로 이동
         }
-
+        // 여기 부분 들어갈 내용 : Service
         return "redirect:/member/login";
     }
 
