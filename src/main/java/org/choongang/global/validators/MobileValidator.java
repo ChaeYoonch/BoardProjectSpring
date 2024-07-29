@@ -11,6 +11,9 @@ public interface MobileValidator { // 전화번호
          * 01011111111
          * 1. 숫자만 남긴다. 2. 패턴 만들기 3. 체크
          */
+
+        mobile = mobile.replaceAll("\\D", ""); // 1. 숫자만 남긴다.
+
         return false;
     }
 }
