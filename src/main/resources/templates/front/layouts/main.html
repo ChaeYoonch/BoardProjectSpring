@@ -4,6 +4,8 @@
         <meta charset="UTF-8">
         <link rel="stylesheet" type="text/css" th:href="@{/common/css/style.css}"> <!-- 모든 사이트 뷰 공통 -->
         <link rel="stylesheet" type="text/css" th:href="@{/front/css/style.css}"> <!-- 프론트 뷰 공통 -->
+        <link th:if="${addCss != null}" rel="stylesheet" type="text/css"
+        th:each="cssFile: ${addCss}" th:href="@{/front/css/{file}.css(file=${cssFile})}"> <!-- null 이 아닌 경우 = 값이 있는 경우 -->
 
         <script th:src="@{/common/js/common.js}"></script> <!-- 모든 사이트 페이지 공통 -->
         <script th:src="@{/front/js/common.js}"></script> <!-- 프론트 페이지 공통 -->
