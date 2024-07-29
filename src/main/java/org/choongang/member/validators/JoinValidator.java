@@ -30,7 +30,11 @@ public class JoinValidator implements Validator {
         String email = form.getEmail();
         String password = form.getPassword();
         String confirmPassword = form.getConfirmPassword();
+        String mobile = form.getMobile();
 
         /* 2. 비밀번호 & 비밀번호 확인 일치 여부 체크 */
+        if (!password.equals(confirmPassword)) { // password 와 confirmPassword 가 일치하지 않을 경우
+
+        }
     }
 }
