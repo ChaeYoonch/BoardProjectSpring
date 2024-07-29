@@ -1,9 +1,11 @@
 package org.choongang.member.validators;
 
 import org.choongang.member.controllers.RequestJoin;
+import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
 
+@Component // 의존성 주입 | 기본 스캔 대상
 public class JoinValidator implements Validator {
 
     @Override
