@@ -24,13 +24,13 @@ public class MemberInfo implements UserDetails {
     }
 
     @Override
-    public boolean isAccountNonExpired() { // 계정의 잠금 여부
+    public boolean isAccountNonExpired() {
         return true;
     }
 
     @Override
-    public boolean isAccountNonLocked() {
-        return UserDetails.super.isAccountNonLocked();
+    public boolean isAccountNonLocked() { // 계정의 잠금 여부
+        return true;
     }
 
     @Override
