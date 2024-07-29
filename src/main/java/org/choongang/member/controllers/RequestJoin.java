@@ -1,5 +1,6 @@
 package org.choongang.member.controllers;
 
+import jakarta.validation.constraints.AssertTrue;
 import jakarta.validation.constraints.NotBlank;
 import lombok.Data;
 
@@ -16,6 +17,10 @@ public class RequestJoin { // 사용자가 작성한 데이터 전달 - 커맨�
 
     @NotBlank
     private String userName; // 회원명
+
+    @NotBlank
     private String mobile; // 전화번호
+
+    @AssertTrue // 필수 동의 -> True 여야만 통과
     private boolean agree; // 약관 동의
 }
