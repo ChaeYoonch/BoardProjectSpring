@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <title>
-
+            <th:block th:if="${pageTitle != null}" th:text="${#strings.concat(pageTitle, ' - ')}"></th:block> 사이트 제목
         </title>
         <link rel="stylesheet" type="text/css" th:href="@{/common/css/style.css}"> <!-- 모든 사이트 뷰 공통 -->
         <link rel="stylesheet" type="text/css" th:href="@{/front/css/style.css}"> <!-- 프론트 뷰 공통 -->
