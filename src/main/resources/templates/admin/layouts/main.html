@@ -6,15 +6,15 @@
             <th:block th:if="${pageTitle != null}" th:text="${#strings.concat(pageTitle, ' - ')}"></th:block> 사이트 제목
         </title>
         <link rel="stylesheet" type="text/css" th:href="@{/common/css/style.css}"> <!-- 모든 사이트 뷰 공통 -->
-        <link rel="stylesheet" type="text/css" th:href="@{/front/css/style.css}"> <!-- 프론트 뷰 공통 -->
+        <link rel="stylesheet" type="text/css" th:href="@{/admin/css/style.css}"> <!-- 관리자 뷰 공통 -->
         <link th:if="${addCss != null}" rel="stylesheet" type="text/css"
-        th:each="cssFile : ${addCss}" th:href="@{/front/css/{file}.css(file=${cssFile})}"> <!-- null 이 아닌 경우 = 값이 있는 경우 -->
+        th:each="cssFile : ${addCss}" th:href="@{/admin/css/{file}.css(file=${cssFile})}"> <!-- null 이 아닌 경우 = 값이 있는 경우 -->
         <th:block layout:fragment="addCss"></th:block> <!-- 내용 치환 부분 -->
 
         <script th:src="@{/common/js/common.js}"></script> <!-- 모든 사이트 페이지 공통 -->
-        <script th:src="@{/front/js/common.js}"></script> <!-- 프론트 페이지 공통 -->
+        <script th:src="@{/admin/js/common.js}"></script> <!-- 관리자 페이지 공통 -->
         <script th:if="${addScript != null}" th:each="jsFile : ${addScript}"
-                th:src="@{/front/js/{file}.js(file=${jsFile})}"></script>
+                th:src="@{/admin/js/{file}.js(file=${jsFile})}"></script>
         <th:block layout:fragment="addScript"></th:block> <!-- controller 없이 연동하는 경우 fragment 로 연결 -->
     </head>
     <body>
