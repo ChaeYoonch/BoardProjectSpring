@@ -45,6 +45,8 @@ public class JoinValidator implements Validator, PasswordValidator, MobileValida
         } // ! : 통과 못한 경우 || : and 의 의미
 
         /* 4. 휴대전화번호 형식 체크 : MobileValidator 연동 */
-
+        if(!mobileCheck(mobile)) { // 형식이 mobile 이 아닌 경우
+            errors.rejectValue("mobile", "Mobile");
+        }
     }
 }
