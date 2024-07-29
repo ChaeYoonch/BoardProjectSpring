@@ -29,5 +29,5 @@ public class Member extends BaseEntity {
 
     @ToString.Exclude
     @OneToMany(mappedBy = "member")
-    private List<Authority> authorities;
+    private List<Authorities> authorities;
 }
