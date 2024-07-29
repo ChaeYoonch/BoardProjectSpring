@@ -2,6 +2,7 @@ package org.choongang.member.controllers;
 
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
+import org.choongang.member.services.MemberSaveService;
 import org.choongang.member.validators.JoinValidator;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.Errors;
@@ -16,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class MemberController {
 
     private final JoinValidator joinValidator; // 의존성 주입 O
+    private final MemberSaveService memberSaveService;
 
     @GetMapping("/join") // url 주소
     public String join(@ModelAttribute RequestJoin form) { // 회원가입
@@ -31,6 +33,7 @@ public class MemberController {
             return "front/member/join"; // 여기로 이동
         }
         // 여기 부분 들어갈 내용 : Service
+        memberSaveService.save(form); // 회원 가입 처리
         return "redirect:/member/login";
     }
 
