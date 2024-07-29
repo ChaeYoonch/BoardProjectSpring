@@ -1,12 +1,13 @@
 package org.choongang.member.controllers;
 
 import jakarta.validation.constraints.AssertTrue;
+import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import lombok.Data;
 
 @Data
 public class RequestJoin { // 사용자가 작성한 데이터 전달 - 커맨드 객체
-    @NotBlank // 필수 항목
+    @NotBlank @Email // 필수 항목 | 이메일
     private String email; // 이메일
 
     @NotBlank
