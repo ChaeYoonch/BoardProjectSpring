@@ -1,12 +1,13 @@
 package org.choongang.member.validators;
 
+import org.choongang.global.validators.PasswordValidator;
 import org.choongang.member.controllers.RequestJoin;
 import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
 
 @Component // 의존성 주입 | 기본 스캔 대상
-public class JoinValidator implements Validator {
+public class JoinValidator implements Validator, PasswordValidator {
 
     @Override
     public boolean supports(Class<?> clazz) {
@@ -37,6 +38,9 @@ public class JoinValidator implements Validator {
             errors.rejectValue("confirmPassword", "Mismatch.password"); // validations.properties 의 값 연동
         }
 
-        /* 3. 비밀번호 복잡성 체크 (알파벳 대/소문자 각각 1개 이상, 숫자 1개 이상, 특수 문자 1개 이상 포함) */
+        /* 3. 비밀번호 복잡성 체크 (알파벳 대/소문자 각각 1개 이상, 숫자 1개 이상, 특수 문자 1개 이상 포함) : PasswordValidator 연동 */
+        if (!alphaCheck(password, false) || !numberCheck(password) || !specialCharsCheck(password)) {
+            errors.rejectValue("password","Complexity"); // validations.properties 의 Complexity 연동
+        } // ! : 통과 못한 경우 || : and 의 의미
     }
 }
