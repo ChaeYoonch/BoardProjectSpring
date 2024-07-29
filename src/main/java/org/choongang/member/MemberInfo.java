@@ -40,6 +40,6 @@ public class MemberInfo implements UserDetails {
 
     @Override
     public boolean isEnabled() { // 회원 탈퇴 여부
-        return UserDetails.super.isEnabled();
+        return true;
     }
 }
