@@ -1,6 +1,7 @@
 package org.choongang.member.services;
 
 import lombok.RequiredArgsConstructor;
+import org.choongang.member.entities.Member;
 import org.choongang.member.repositories.AuthoritiesRepository;
 import org.choongang.member.repositories.MemberRepository;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -14,4 +15,8 @@ public class MemberSaveService {
     private final MemberRepository memberRepository;
     private final AuthoritiesRepository authoritiesRepository;
     private final PasswordEncoder passwordEncoder;
+
+    public void save(Member member) {
+
+    }
 }
