@@ -10,4 +10,5 @@ public class RequestJoin {
     private String confirmPassword; // 비밀번호 확인
     private String userName; // 회원명
     private String mobile; // 전화번호
+    private boolean agree; // 약관 동의
 }
