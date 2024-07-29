@@ -31,6 +31,14 @@
                     <div class="error" th:each="err : ${#fields.errors('confirmPassword')}" th:text="${err}"></div>
                 </dd>
             </dl>
+
+            <dl>
+                <dt th:text="#{회원명}"></dt>
+                <dd>
+                    <input type="text" name="userName" th:field="*{userName}">
+                    <div class="error" th:each="err : ${#fields.errors('userName')}" th:text="${err}"></div>
+                </dd>
+            </dl>
         </form>
     </main>
 </html>
