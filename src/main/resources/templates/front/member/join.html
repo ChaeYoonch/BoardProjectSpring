@@ -43,7 +43,7 @@
             <dl>
                 <dt th:text="#{휴대전화번호}"></dt>
                 <dd>
-                    <input type="text" name="mobile" th:field="*{mobile}">
+                    <input type="text" name="mobile" th:field="*{mobile}"> <!-- * : th:object="${requestJoin}" -->
                     <div class="error" th:each="err : ${#fields.errors('mobile')}" th:text="${err}"></div>
                 </dd>
             </dl>
