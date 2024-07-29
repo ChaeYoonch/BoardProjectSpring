@@ -21,4 +21,14 @@ public interface PasswordValidator {
 
         return false;
     }
+
+    /**
+     * 특수 문자 복잡성 체크
+     * @param password
+     * @return
+     */
+    default boolean specialCharsCheck(String password) { // 특수 문자 체크
+
+        return false;
+    }
 }
