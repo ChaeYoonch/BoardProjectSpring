@@ -10,6 +10,7 @@ public interface MobileValidator { // 전화번호
          * 010 1111 1111
          * 01011111111
          * 1. 숫자만 남긴다. 2. 패턴 만들기 3. 체크
+         * 예) 0101111111111111
          */
 
         mobile = mobile.replaceAll("\\D", ""); // 1. 숫자만 남긴다.
