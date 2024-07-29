@@ -36,5 +36,9 @@ public class MemberSaveService {
     public void save(Member member, List<Authority> authorities) { // 매개 변수 2개
 
         memberRepository.saveAndFlush(member);
+
+        if (authorities != null) { // 객체가 아닌 경우에만 비움
+            authoritiesRepository.
+        }
     }
 }
