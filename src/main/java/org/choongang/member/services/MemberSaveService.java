@@ -37,7 +37,7 @@ public class MemberSaveService {
     public void save(Member member, List<Authority> authorities) { // 매개 변수 2개
 
         memberRepository.saveAndFlush(member);
-
+        /* 권한 추가 & 수정 S */
         if (authorities != null) { // 객체가 아닌 경우에만 비움
             List<Authorities> items = authoritiesRepository.findByMember(member); // 값을 가져온 다음 변경
             authoritiesRepository.deleteAll(items); // items 가져온 다음 비움 | 기존의 것 비움
@@ -47,6 +47,9 @@ public class MemberSaveService {
                                                              .member(member)
                                                              .authority(a)
                                                              .build()).toList(); // 새롭게 채움 (갱신)
+
+            authoritiesRepository.saveAllAndFlush(items);
         }
+        /* 권한 추가 & 수정 E */
     }
 }
