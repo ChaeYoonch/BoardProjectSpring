@@ -23,6 +23,10 @@ public class Member extends BaseEntity {
 
     @Column(length = 65, nullable = false)
     private String password;
+
+    @Column(length = 40, nullable = false)
     private String userName;
+
+
     private String mobile;
 }
