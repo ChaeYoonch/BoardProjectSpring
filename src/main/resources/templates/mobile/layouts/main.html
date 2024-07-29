@@ -6,21 +6,21 @@
             <th:block th:if="${pageTitle != null}" th:text="${#strings.concat(pageTitle, ' - ')}"></th:block> 사이트 제목
         </title>
         <link rel="stylesheet" type="text/css" th:href="@{/common/css/style.css}"> <!-- 모든 사이트 뷰 공통 -->
-        <link rel="stylesheet" type="text/css" th:href="@{/front/css/style.css}"> <!-- 프론트 뷰 공통 -->
+        <link rel="stylesheet" type="text/css" th:href="@{/mobile/css/style.css}"> <!-- 프론트 뷰 공통 -->
         <link th:if="${addCss != null}" rel="stylesheet" type="text/css"
-        th:each="cssFile : ${addCss}" th:href="@{/front/css/{file}.css(file=${cssFile})}"> <!-- null 이 아닌 경우 = 값이 있는 경우 -->
+        th:each="cssFile : ${addCss}" th:href="@{/mobile/css/{file}.css(file=${cssFile})}"> <!-- null 이 아닌 경우 = 값이 있는 경우 -->
         <th:block layout:fragment="addCss"></th:block> <!-- 내용 치환 부분 -->
 
         <script th:src="@{/common/js/common.js}"></script> <!-- 모든 사이트 페이지 공통 -->
-        <script th:src="@{/front/js/common.js}"></script> <!-- 프론트 페이지 공통 -->
+        <script th:src="@{/mobile/js/common.js}"></script> <!-- 프론트 페이지 공통 -->
         <script th:if="${addScript != null}" th:each="jsFile : ${addScript}"
-                th:src="@{/front/js/{file}.js(file=${jsFile})}"></script>
+                th:src="@{/mobile/js/{file}.js(file=${jsFile})}"></script>
         <th:block layout:fragment="addScript"></th:block> <!-- controller 없이 연동하는 경우 fragment 로 연결 -->
     </head>
     <body>
-        <header th:replace="~{front/outlines/_header::common}"></header> <!-- _header.html 의 common 으로 정보 치환 -->
+        <header th:replace="~{mobile/outlines/_header::common}"></header> <!-- _header.html 의 common 으로 정보 치환 -->
         <main layout:fragment="content"></main>
-        <footer th:replace="~{footer/outlines/_header::common}"></footer> <!-- _footer.html 의 common 으로 정보 치환 -->
+        <footer th:replace="~{mobile/outlines/_footer::common}"></footer> <!-- _footer.html 의 common 으로 정보 치환 -->
     <iframe name="ifrmHidden" class="dn"></iframe> <!-- dn = display : none | 보이지 않게 하기 위해-->
     </body>
 </html>
