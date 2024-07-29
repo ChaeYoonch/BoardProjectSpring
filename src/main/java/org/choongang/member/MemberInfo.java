@@ -24,7 +24,7 @@ public class MemberInfo implements UserDetails {
     }
 
     @Override
-    public boolean isAccountNonExpired() {
+    public boolean isAccountNonExpired() { // 계정의 만료 여부
         return true;
     }
 
