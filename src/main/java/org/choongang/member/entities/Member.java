@@ -27,6 +27,6 @@ public class Member extends BaseEntity {
     @Column(length = 40, nullable = false)
     private String userName;
 
-
+    @Column(length = 15, nullable = false)
     private String mobile;
 }
