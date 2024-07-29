@@ -36,5 +36,6 @@ public class MemberSaveService {
 
     public void save(Member member, List<Authority> authorities) { // 매개 변수 2개
 
+        memberRepository.saveAndFlush(member);
     }
 }
