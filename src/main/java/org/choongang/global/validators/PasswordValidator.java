@@ -11,7 +11,7 @@ public interface PasswordValidator {
         if (caseInsensitive) { // 대,소문자 구분 없이 알파벳 체크
             return password.matches(".*[a-zA-Z]+.*"); // + : 1개 이상 이라는 의미
         }
-        return false;
+        return password.matches(".*[a-z]+.*") && password.matches(".*[A-Z]+.*"); // 소문자 1개 이상 && 대문자 1개 이상
     }
 
     /**
