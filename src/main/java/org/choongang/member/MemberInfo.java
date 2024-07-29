@@ -34,12 +34,12 @@ public class MemberInfo implements UserDetails {
     }
 
     @Override
-    public boolean isCredentialsNonExpired() {
-        return UserDetails.super.isCredentialsNonExpired();
+    public boolean isCredentialsNonExpired() { // 비밀 번호의 만료 여부
+        return true;
     }
 
     @Override
-    public boolean isEnabled() {
+    public boolean isEnabled() { // 회원 탈퇴 여부
         return UserDetails.super.isEnabled();
     }
 }
