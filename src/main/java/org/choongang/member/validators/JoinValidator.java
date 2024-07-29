@@ -36,5 +36,7 @@ public class JoinValidator implements Validator {
         if (!password.equals(confirmPassword)) { // password 와 confirmPassword 가 일치하지 않을 경우
             errors.rejectValue("confirmPassword", "Mismatch.password"); // validations.properties 의 값 연동
         }
+
+        /* 3. 비밀번호 복잡성 체크 (알파벳 대/소문자 각각 1개 이상, 숫자 1개 이상, 특수 문자 1개 이상 포함) */
     }
 }
