@@ -9,7 +9,7 @@ import org.springframework.data.querydsl.QuerydslPredicateExecutor;
 import java.util.Optional;
 
 public interface MemberRepository extends JpaRepository<Member, Long>, QuerydslPredicateExecutor {
-    @EntityGraph(attributePaths = "member")
+    @EntityGraph(attributePaths = "authorities")
     Optional<Member> findByEmail(String email);
 
     default boolean exists(String email) { // 메서드 오버로드
