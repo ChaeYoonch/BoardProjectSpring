@@ -1,14 +1,19 @@
 package org.choongang.member.validators;
 
+import lombok.RequiredArgsConstructor;
 import org.choongang.global.validators.MobileValidator;
 import org.choongang.global.validators.PasswordValidator;
 import org.choongang.member.controllers.RequestJoin;
+import org.choongang.member.repositories.MemberRepository;
 import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
 
 @Component // 의존성 주입 | 기본 스캔 대상
+@RequiredArgsConstructor // final 로 생성자 매개변수 주입 용도
 public class JoinValidator implements Validator, PasswordValidator, MobileValidator {
+
+    private final MemberRepository memberRepository;
 
     @Override
     public boolean supports(Class<?> clazz) {
