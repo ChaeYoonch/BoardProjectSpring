@@ -3,6 +3,7 @@ package org.choongang.member.services;
 import lombok.RequiredArgsConstructor;
 import org.choongang.member.constants.Authority;
 import org.choongang.member.controllers.RequestJoin;
+import org.choongang.member.entities.Authorities;
 import org.choongang.member.entities.Member;
 import org.choongang.member.repositories.AuthoritiesRepository;
 import org.choongang.member.repositories.MemberRepository;
@@ -38,7 +39,9 @@ public class MemberSaveService {
         memberRepository.saveAndFlush(member);
 
         if (authorities != null) { // 객체가 아닌 경우에만 비움
-            authoritiesRepository.
+            List<Authorities> items = authoritiesRepository.findByMember(member); // 값을 가져온 다음 변경
+            authoritiesRepository.deleteAll(items); // items 가져온 다음 비움
+            authoritiesRepository.flush();
         }
     }
 }
