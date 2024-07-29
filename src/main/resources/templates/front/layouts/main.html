@@ -12,7 +12,7 @@
         <script th:src="@{/front/js/common.js}"></script> <!-- 프론트 페이지 공통 -->
         <script th:if="${addScript != null}" th:each="jsFile : ${addScript}"
                 th:src="@{/front/js/{file}.js(file=${jsFile})}"></script>
-        <th:block layout:fragment="addScript"></th:block>
+        <th:block layout:fragment="addScript"></th:block> <!-- controller 없이 연동하는 경우 fragment 로 연결 -->
     </head>
     <body>
 
