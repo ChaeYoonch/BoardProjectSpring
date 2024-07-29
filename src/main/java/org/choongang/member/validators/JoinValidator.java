@@ -1,5 +1,6 @@
 package org.choongang.member.validators;
 
+import org.choongang.global.validators.MobileValidator;
 import org.choongang.global.validators.PasswordValidator;
 import org.choongang.member.controllers.RequestJoin;
 import org.springframework.stereotype.Component;
@@ -7,7 +8,7 @@ import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
 
 @Component // 의존성 주입 | 기본 스캔 대상
-public class JoinValidator implements Validator, PasswordValidator {
+public class JoinValidator implements Validator, PasswordValidator, MobileValidator {
 
     @Override
     public boolean supports(Class<?> clazz) {
@@ -43,7 +44,7 @@ public class JoinValidator implements Validator, PasswordValidator {
             errors.rejectValue("password","Complexity"); // validations.properties 의 Complexity 연동
         } // ! : 통과 못한 경우 || : and 의 의미
 
-        /* 4. 휴대전화번호 형식 체크 */
+        /* 4. 휴대전화번호 형식 체크 : MobileValidator 연동 */
 
     }
 }
