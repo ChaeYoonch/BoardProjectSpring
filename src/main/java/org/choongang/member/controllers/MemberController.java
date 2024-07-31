@@ -76,9 +76,13 @@ public class MemberController {
     @ResponseBody @GetMapping("/test3")
     public void test3() {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication(); // setAuthentication : 로그인 상태 강제로 유지
-        MemberInfo memberInfo = (MemberInfo)authentication.getPrincipal();
 
         log.info("로그인 상태 : {}", authentication.isAuthenticated());
-        log.info("로그인 회원 : {}", memberInfo.toString());
+        if (authentication.isAuthenticated() && authentication.getPrincipal() instanceof MemberInfo) { // 로그인 상태 - UserDetails 구현체 (getPrincipal)
+            MemberInfo memberInfo = (MemberInfo) authentication.getPrincipal();
+            log.info("로그인 회원 : {}", memberInfo.toString());
+        } else { // 미로그인 상태 - String / anonymousUser (getPrincipal())
+            log.info("getPrincipal() : {}", authentication.getPrincipal());
+        }
     }
 }
