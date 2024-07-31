@@ -61,7 +61,7 @@ public class MemberController {
         }
         return "front/member/login";
     }
-
+    /* 로그인 정보 가져오기 4가지 방법 */
     @ResponseBody @GetMapping("/test")
     public void test(Principal principal) { // 일반 controller 내에서 void 사용 -> @ResponseBody
         log.info("로그인 아이디 : {}", principal.getName()); // 로그인한 회원의 정보 : 아이디 확인
@@ -74,6 +74,6 @@ public class MemberController {
 
     @ResponseBody @GetMapping("/test3")
     public void test3() {
-        SecurityContextHolder.getContext().setAuthentication();
+        SecurityContextHolder.getContext().setAuthentication(); // setAuthentication : 로그인 상태 강제로 유지
     }
 }
