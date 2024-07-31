@@ -49,7 +49,7 @@ public class MemberController {
 
             // 비밀번호 만료된 경우 비밀번호 재설정 페이지로 이동
             if (code.equals("CredentialsExpired.Login")) {
-
+                return "redirect:/member/password/reset"; // 비밀번호 재설정 페이지
             }
         }
         return "front/member/login";
