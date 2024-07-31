@@ -1,5 +1,6 @@
 package org.choongang.member;
 
+import org.choongang.member.constants.Authority;
 import org.choongang.member.entities.Authorities;
 import org.choongang.member.entities.Member;
 import org.springframework.security.core.Authentication;
@@ -19,6 +20,7 @@ public class MemberUtil { // Member 편의 기능 추가 -> SecurityContextHolde
         if (isLogin()) {
             Member member = getMember();
             List<Authorities> authorities = member.getAuthorities(); // 위의 member 연결
+            return authorities.stream().anyMatch(s -> s.getAuthority() == Authority.ADMIN); // 값 중에서 1개라도 매칭되면 됨!
         }
         return false;
     }
