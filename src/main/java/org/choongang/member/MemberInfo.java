@@ -44,7 +44,7 @@ public class MemberInfo implements UserDetails {
 
     @Override
     public boolean isCredentialsNonExpired() { // 비밀 번호의 만료 여부
-        return true;
+        return true; // true -> false
     }
 
     @Override
