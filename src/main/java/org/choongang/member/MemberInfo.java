@@ -48,7 +48,7 @@ public class MemberInfo implements UserDetails {
     }
 
     @Override
-    public boolean isEnabled() { // 회원 탈퇴 여부
+    public boolean isEnabled() { // 회원 탈퇴 여부 = 회원 활성화 여부
         return true;
     }
 }
