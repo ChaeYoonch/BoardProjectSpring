@@ -1,5 +1,7 @@
 package org.choongang.global.configs;
 
+import org.choongang.member.services.LoginFailureHandler;
+import org.choongang.member.services.LoginSuccessHandler;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -18,8 +20,10 @@ public class SecurityConfig {
             f.loginPage("/member/login") // 로그인 시 이동할 경로
              .usernameParameter("email")
              .passwordParameter("password")
-             .successForwardUrl("/") // 로그인 성공 시 이동할 경로 | Forward : 버퍼 치환 -> 페이지 이동 X
-             .failureUrl("/member/login?error=true"); // 로그인 실패 시 이동할 경로 | Url -> 페이지 이동 O
+             .successHandler(new LoginSuccessHandler())
+             /*.successForwardUrl("/") // 로그인 성공 시 이동할 경로 | Forward : 버퍼 치환 -> 페이지 이동 X */
+             .failureHandler(new LoginFailureHandler());
+             /*.failureUrl("/member/login?error=true"); // 로그인 실패 시 이동할 경로 | Url -> 페이지 이동 O */
         });
 
         http.logout(f -> { // 도메인 특화 방식 | 로그아웃
