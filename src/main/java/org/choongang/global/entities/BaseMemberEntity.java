@@ -12,7 +12,7 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 @MappedSuperclass
 @Getter @Setter
 @EntityListeners(AuditingEntityListener.class)
-public abstract class BaseMemberEntity extends BaseEntity { // 회원 관련만 작성
+public abstract class BaseMemberEntity extends BaseEntity { // 회원 관련만 작성 | ex) 게시판, 관리자 -> 사용자의 정보 필요 多
 
     @CreatedBy
     @Column(length = 65, updatable = false) // 수정 불가!
