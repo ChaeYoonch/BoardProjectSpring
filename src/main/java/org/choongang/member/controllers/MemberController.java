@@ -5,6 +5,7 @@ import lombok.RequiredArgsConstructor;
 import org.choongang.member.services.MemberSaveService;
 import org.choongang.member.validators.JoinValidator;
 import org.springframework.stereotype.Controller;
+import org.springframework.util.StringUtils;
 import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.*;
 
@@ -42,6 +43,15 @@ public class MemberController {
 
     @GetMapping("/login")
     public String login(@Valid @ModelAttribute RequestLogin form, Errors errors) { // 로그인 | RequestLogin 커맨드 객체 form 형태 | 검증 -> Errors 추가
+        String code = form.getCode();
+        if (StringUtils.hasText(code)) {
+            errors.reject(code, form.getDefaultMessage()); // LoginFailureHandler 의 form.getDefaultMessage()
+
+            // 비밀번호 만료된 경우 비밀번호 재설정 페이지로 이동
+            if (code.equals("CredentialsExpired.Login")) {
+
+            }
+        }
         return "front/member/login";
     }
 }
