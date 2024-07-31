@@ -6,6 +6,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.choongang.member.MemberInfo;
 import org.choongang.member.services.MemberSaveService;
 import org.choongang.member.validators.JoinValidator;
+import org.springframework.security.core.Authentication;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
@@ -74,6 +75,6 @@ public class MemberController {
 
     @ResponseBody @GetMapping("/test3")
     public void test3() {
-        SecurityContextHolder.getContext().setAuthentication(); // setAuthentication : 로그인 상태 강제로 유지
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication(); // setAuthentication : 로그인 상태 강제로 유지
     }
 }
