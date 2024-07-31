@@ -1,5 +1,6 @@
 package org.choongang.global.entities;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.EntityListeners;
 import jakarta.persistence.MappedSuperclass;
 import lombok.Getter;
@@ -14,8 +15,10 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 public abstract class BaseMemberEntity extends BaseEntity { // 회원 관련만 작성
 
     @CreatedBy
-    private String createdBy;
+    @Column(length = 65, updatable = false) // 수정 불가!
+    private String createdBy; // 추가할 때만 값 O, 수정 X
 
     @LastModifiedBy
-    private String modifiedBy;
+    @Column(length = 65, updatable = false) // 수정 불가!
+    private String modifiedBy; // 수정할 때만 값 O
 }
