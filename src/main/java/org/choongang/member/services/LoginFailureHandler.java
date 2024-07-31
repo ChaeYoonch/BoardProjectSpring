@@ -37,8 +37,9 @@ public class LoginFailureHandler implements AuthenticationFailureHandler { // �
             form.setCode("Fail.Login");
         }
 
-        System.out.println(exception);
+        form.setDefaultMessage(exception.getMessage()); // RequestLogin 의 defaultMessage 커맨드 객체 연동
 
+        // System.out.println(exception);
         form.setSuccess(false); // false 일 경우에만 문구 노출
         session.setAttribute("requestLogin", form); // 명칭 동일하게 입력해야 연동 O
 
