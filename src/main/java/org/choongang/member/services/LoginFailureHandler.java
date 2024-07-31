@@ -25,7 +25,7 @@ public class LoginFailureHandler implements AuthenticationFailureHandler { // �
         // System.out.println(exception);
 
         if (exception instanceof BadCredentialsException) { // 아이디 또는 비밀번호가 일치하지 않는 경우 발생하는 예외
-            form.setCode("BadCredentials.Login"); // Code = RequestLogin 의 code 커맨드 객체
+            form.setCode("BadCredentials.Login"); // Code = RequestLogin 의 code 커맨드 객체 | MemberInfo 의 isCredentialsNonExpired() 메서드 연동
         }
 
         form.setSuccess(false); // false 일 경우에만 문구 노출
