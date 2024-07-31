@@ -14,5 +14,7 @@ public class LoginFailureHandler implements AuthenticationFailureHandler { // �
     // 로그인 실패시에  유입되는 메서드
     public void onAuthenticationFailure(HttpServletRequest request, HttpServletResponse response, AuthenticationException exception) throws IOException, ServletException {
 
+        // 로그인 실패 시 로그인 페이지 이동
+        response.sendRedirect(request.getContextPath() + "/member/login");
     }
 }
