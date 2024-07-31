@@ -9,6 +9,8 @@ import org.springframework.util.StringUtils;
 import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.*;
 
+import java.security.Principal;
+
 @Controller
 @RequestMapping("/member")
 @RequiredArgsConstructor
@@ -53,5 +55,10 @@ public class MemberController {
             }
         }
         return "front/member/login";
+    }
+
+    @ResponseBody @GetMapping("/test")
+    public void test(Principal principal) { // 일반 controller 내에서 void 사용 -> @ResponseBody | 로그인한 회원 정보의 아이디 확인
+
     }
 }
