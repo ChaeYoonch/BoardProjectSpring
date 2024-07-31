@@ -19,7 +19,7 @@ public class SecurityConfig {
              .usernameParameter("email")
              .passwordParameter("password")
              .successForwardUrl("/") // 로그인 성공 시 이동할 경로
-             .failureForwardUrl("/member/login?error=true"); // 로그인 실패 시 이동할 경로
+             .failureUrl("/member/login?error=true"); // 로그인 실패 시 이동할 경로
         });
 
         http.logout(f -> { // 도메인 특화 방식 | 로그아웃
