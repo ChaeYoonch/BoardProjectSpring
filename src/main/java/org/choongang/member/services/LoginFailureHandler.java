@@ -22,6 +22,9 @@ public class LoginFailureHandler implements AuthenticationFailureHandler { // �
         form.setEmail(request.getParameter("email")); // 위의 form 에서 정보 연동
         form.setPassword(request.getParameter("password"));
 
+        System.out.println(exception);
+
+        form.setSuccess(false); // false 일 경우에만 문구 노출
         session.setAttribute("requestLogin", form); // 명칭 동일하게 입력해야 연동 O
 
         // 로그인 실패 시 로그인 페이지 이동
