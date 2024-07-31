@@ -14,7 +14,7 @@ public class MemberInfo implements UserDetails {
     /* 구현 객체 */
     private String email;
     private String password;
-    private Collection<? extends GrantedAuthority> authorities;
+    private Collection<? extends GrantedAuthority> authorities; // authorities 얘가 인가 담당함!
     private Member member;
 
     @Override
