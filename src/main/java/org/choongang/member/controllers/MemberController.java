@@ -4,6 +4,7 @@ import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.choongang.member.MemberInfo;
+import org.choongang.member.MemberUtil;
 import org.choongang.member.services.MemberSaveService;
 import org.choongang.member.validators.JoinValidator;
 import org.springframework.security.core.Authentication;
@@ -25,6 +26,7 @@ public class MemberController {
 
     private final JoinValidator joinValidator; // 의존성 주입 O
     private final MemberSaveService memberSaveService;
+    private final MemberUtil memberUtil;
 
     @ModelAttribute
     public RequestLogin requestLogin() {
@@ -88,5 +90,11 @@ public class MemberController {
         } else { // 미로그인 상태 - String / anonymousUser (getPrincipal())
             log.info("getPrincipal() : {}", authentication.getPrincipal());
         }
+    }
+
+    @ResponseBody @GetMapping("/test4")
+    public void test4() {
+        log.info("로그인 여부 : {}", memberUtil.isLogin()); // 로그인 여부
+        log.info("로그인 회원 : {}", memberUtil.getMember());
     }
 }
