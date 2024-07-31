@@ -1,6 +1,7 @@
 package org.choongang.member.services;
 
 import lombok.RequiredArgsConstructor;
+import org.choongang.member.entities.Member;
 import org.choongang.member.repositories.MemberRepository;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -15,6 +16,9 @@ public class MemberInfoService implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+                                         // 여기 username 연동       이 예외 UsernameNotFoundException 연동
+        Member member = memberRepository.findByEmail(username).orElseThrow(() -> new UsernameNotFoundException(username));
+
         return null;
     }
 }
