@@ -13,7 +13,7 @@ import java.io.IOException;
 public class LoginSuccessHandler implements AuthenticationSuccessHandler { // 로그인 성공 시 이동 경로
 
     @Override
-    public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response, Authentication authentication) throws IOException, ServletException {
+    public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response, Authentication authentication) throws IOException, ServletException { // Authentication authentication : 로그인 한 사용자 정보가 담겨 있음
 
         HttpSession session = request.getSession();
         // 세션에 남아 있는 requestLogin 값 제거
