@@ -5,6 +5,7 @@ import org.choongang.member.constants.Authority;
 import org.choongang.member.entities.Authorities;
 import org.choongang.member.entities.Member;
 import org.choongang.member.repositories.MemberRepository;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -26,6 +27,8 @@ public class MemberInfoService implements UserDetailsService {
 
         List<Authorities> tmp = Objects.requireNonNullElse(member.getAuthorities(), // 위의 member 연결
                                 List.of(Authorities.builder().member(member).authority(Authority.USER).build()));
+
+        List<SimpleGrantedAuthority> authorities = tmp.stream().map(a -> new SimpleGrantedAuthority(a.getAuthority().name())).toList(); // 위의 tmp 연동
 
         return null;
     }
