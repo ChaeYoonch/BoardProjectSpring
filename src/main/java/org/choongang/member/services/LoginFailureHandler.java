@@ -15,5 +15,4 @@ public class LoginFailureHandler implements AuthenticationFailureHandler { // ыб
     public void onAuthenticationFailure(HttpServletRequest request, HttpServletResponse response, AuthenticationException exception) throws IOException, ServletException {
 
     }
-
 }
