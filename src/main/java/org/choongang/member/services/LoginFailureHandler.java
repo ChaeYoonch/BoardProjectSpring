@@ -5,6 +5,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 import org.choongang.member.controllers.RequestLogin;
+import org.springframework.security.authentication.AccountExpiredException;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.CredentialsExpiredException;
 import org.springframework.security.authentication.DisabledException;
@@ -31,6 +32,8 @@ public class LoginFailureHandler implements AuthenticationFailureHandler { // �
             form.setCode("Disabled.Login");
         } else if (exception instanceof CredentialsExpiredException) { // 비밀번호 유효 기간 만료
             form.setCode("CredentialsExpired.Login");
+        } else if (exception instanceof AccountExpiredException) { // 사용자 계정 유효기간 만료 | MemberInfo 의 isAccountNonExpired() 연동
+            form.setCode("AccountExpired.Login");
         }
 
         System.out.println(exception);
