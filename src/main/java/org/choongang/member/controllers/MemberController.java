@@ -76,5 +76,6 @@ public class MemberController {
     @ResponseBody @GetMapping("/test3")
     public void test3() {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication(); // setAuthentication : 로그인 상태 강제로 유지
+        log.info("로그인 상태 : {}", authentication.isAuthenticated());
     }
 }
