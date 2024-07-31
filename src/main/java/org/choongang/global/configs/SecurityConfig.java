@@ -31,6 +31,14 @@ public class SecurityConfig {
         });
         /* 로그인, 로그아웃 E */
 
+        /* 인가 (접근 통제) 설정 S */
+        http.authorizeHttpRequests(c -> { // url 로 나눠서 접근
+            c.requestMatchers("/mypage/**").authenticated() // mypage 포함 하위 경로 전체 | authenticated() : 회원인 경우
+                    .requestMatchers("/admin/**").hasAnyAuthority("ADMIN") // admin 포함 하위 경로 전체 | hasAllAuthority() : 여러 개 중 1개 | hasAuthority() : 1개만
+                    .anyRequest().permitAll(); // anonymous : 미로그인 사용자인 경우
+        });
+        /* 인가 (접근 통제) 설정 E */
+
         return http.build();
     }
 
