@@ -10,4 +10,6 @@ public class RequestLogin { // 로그인 커맨드 객체 추가
 
     @NotBlank
     private String password;
+
+    private boolean success = true;
 }
