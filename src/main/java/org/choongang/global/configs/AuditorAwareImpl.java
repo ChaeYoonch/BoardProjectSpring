@@ -17,6 +17,6 @@ public class AuditorAwareImpl implements AuditorAware<String> {
     public Optional<String> getCurrentAuditor() {
         String email = memberUtil.isLogin() ? memberUtil.getMember().getEmail() : null; // String email = null;
 
-        return Optional.empty();
+        return Optional.of(email); // 위의 email 값 연결
     }
 }
