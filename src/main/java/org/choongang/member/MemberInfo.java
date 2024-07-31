@@ -15,7 +15,7 @@ public class MemberInfo implements UserDetails {
     private String email;
     private String password;
     private Collection<? extends GrantedAuthority> authorities; // authorities 얘가 인가 담당함! = 사용자의 권한 조회 -> 접근 제한을 통제하는 역할
-    private Member member;
+    private Member member; // MemberUtil 에서 사용
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
