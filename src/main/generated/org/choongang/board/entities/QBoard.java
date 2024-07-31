@@ -20,9 +20,9 @@ public class QBoard extends EntityPathBase<Board> {
 
     public final org.choongang.global.entities.QBaseMemberEntity _super = new org.choongang.global.entities.QBaseMemberEntity(this);
 
-    public final StringPath bid = createString("bid");
+    public final StringPath bId = createString("bId");
 
-    public final StringPath bname = createString("bname");
+    public final StringPath bName = createString("bName");
 
     //inherited
     public final DateTimePath<java.time.LocalDateTime> createAt = _super.createAt;
