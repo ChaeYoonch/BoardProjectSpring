@@ -28,7 +28,7 @@ public class MemberInfoService implements UserDetailsService {
         List<Authorities> tmp = Objects.requireNonNullElse(member.getAuthorities(), // 위의 member 연결
                                 List.of(Authorities.builder().member(member).authority(Authority.USER).build()));
 
-        List<SimpleGrantedAuthority> authorities = tmp.stream().map(a -> new SimpleGrantedAuthority(a.getAuthority().name())).toList(); // 위의 tmp 연동
+        List<SimpleGrantedAuthority> authorities = tmp.stream().map(a -> new SimpleGrantedAuthority(a.getAuthority().name())).toList(); // 위의 tmp 연동 | SimpleGrantedAuthority -> 문자열이 들어가야 하므로 a.getAuthority().name() 형태!
 
         return null;
     }
