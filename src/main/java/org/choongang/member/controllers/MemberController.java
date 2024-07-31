@@ -3,8 +3,10 @@ package org.choongang.member.controllers;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.choongang.member.MemberInfo;
 import org.choongang.member.services.MemberSaveService;
 import org.choongang.member.validators.JoinValidator;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.StringUtils;
 import org.springframework.validation.Errors;
@@ -65,7 +67,7 @@ public class MemberController {
     }
 
     @ResponseBody @GetMapping("/test2")
-    public void test2() {
-
+    public void test2(@AuthenticationPrincipal MemberInfo memberInfo) { // 스프링 시큐리티 -> 현재 로그인 O -> 확인 O
+        log.info("로그인 회원 : {}", memberInfo.toString()); // memberInfo 객체 바로 주입
     }
 }
