@@ -6,6 +6,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 import org.choongang.member.controllers.RequestLogin;
 import org.springframework.security.authentication.BadCredentialsException;
+import org.springframework.security.authentication.DisabledException;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.web.authentication.AuthenticationFailureHandler;
 
@@ -25,6 +26,8 @@ public class LoginFailureHandler implements AuthenticationFailureHandler { // �
 
         if (exception instanceof BadCredentialsException) { // 아이디 또는 비밀번호가 일치하지 않는 경우 발생하는 예외
             form.setCode("BadCredentials.Login"); // Code = RequestLogin 의 code 커맨드 객체 | MemberInfo 의 isCredentialsNonExpired() 메서드 연동
+        } else if (exception instanceof DisabledException) { // 탈퇴한 회원 의 경우
+
         }
 
         System.out.println(exception);
