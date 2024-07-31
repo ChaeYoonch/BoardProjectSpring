@@ -16,8 +16,8 @@ import org.choongang.global.entities.BaseMemberEntity;
 public class Board extends BaseMemberEntity { // 게시판 설정
 
     @Id @Column(length = 30)
-    private String bid; // 게시판 아이디
+    private String bId; // 게시판 아이디
 
     @Column(length = 60, nullable = false)
-    private String bname; // 게시판 이름
+    private String bName; // 게시판 이름
 }
