@@ -12,11 +12,11 @@ import java.util.List;
 @Component
 public class MemberUtil { // Member 편의 기능 추가 -> SecurityContextHolder 사용
 
-    public boolean isLogin() { // 로그인 여부
+    public boolean isLogin() { // 로그인 여부 체크
         return getMember() != null;
     }
 
-    public boolean isAdmin() {
+    public boolean isAdmin() { // 관리자 여부 체크 (다중 권한 체크)
         if (isLogin()) {
             Member member = getMember();
             List<Authorities> authorities = member.getAuthorities(); // 위의 member 연결
