@@ -19,6 +19,6 @@ public abstract class BaseMemberEntity extends BaseEntity { // 회원 관련만 
     private String createdBy; // 추가할 때만 값 O, 수정 X
 
     @LastModifiedBy
-    @Column(length = 65, updatable = false) // 수정 불가!
+    @Column(length = 65, insertable = false) // 수정 불가!
     private String modifiedBy; // 수정할 때만 값 O
 }
