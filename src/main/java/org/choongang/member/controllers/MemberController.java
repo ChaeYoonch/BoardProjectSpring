@@ -63,4 +63,9 @@ public class MemberController {
     public void test(Principal principal) { // 일반 controller 내에서 void 사용 -> @ResponseBody
         log.info("로그인 아이디 : {}", principal.getName()); // 로그인한 회원의 정보 : 아이디 확인
     }
+
+    @ResponseBody @GetMapping("/test2")
+    public void test2() {
+
+    }
 }
