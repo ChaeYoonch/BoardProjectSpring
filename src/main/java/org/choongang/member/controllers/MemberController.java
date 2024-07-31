@@ -65,12 +65,16 @@ public class MemberController {
     /* 로그인 정보 가져오기 4가지 방법 */
     @ResponseBody @GetMapping("/test")
     public void test(Principal principal) { // 일반 controller 내에서 void 사용 -> @ResponseBody
-        log.info("로그인 아이디 : {}", principal.getName()); // 로그인한 회원의 정보 : 아이디 확인
+        if (principal != null) {
+            log.info("로그인 아이디 : {}", principal.getName()); // 로그인한 회원의 정보 : 아이디 확인
+        }
     }
 
     @ResponseBody @GetMapping("/test2")
     public void test2(@AuthenticationPrincipal MemberInfo memberInfo) { // 스프링 시큐리티 -> 현재 로그인 O -> 확인 O
-        log.info("로그인 회원 : {}", memberInfo.toString()); // memberInfo 객체 바로 주입
+        if(memberInfo != null) {
+            log.info("로그인 회원 : {}", memberInfo.toString()); // memberInfo 객체 바로 주입
+        }
     }
 
     @ResponseBody @GetMapping("/test3")
