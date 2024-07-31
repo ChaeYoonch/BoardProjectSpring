@@ -1,6 +1,7 @@
 package org.choongang.member.services;
 
 import lombok.RequiredArgsConstructor;
+import org.choongang.member.MemberInfo;
 import org.choongang.member.constants.Authority;
 import org.choongang.member.entities.Authorities;
 import org.choongang.member.entities.Member;
@@ -30,6 +31,11 @@ public class MemberInfoService implements UserDetailsService {
 
         List<SimpleGrantedAuthority> authorities = tmp.stream().map(a -> new SimpleGrantedAuthority(a.getAuthority().name())).toList(); // 위의 tmp 연동 | SimpleGrantedAuthority -> 문자열이 들어가야 하므로 a.getAuthority().name() 형태!
 
-        return null;
+        return MemberInfo.builder()
+                         .email(member.getEmail()) // email
+                         .password(member.getPassword()) // password
+                         .member(member) // member 기타 정보
+                         .authorities(authorities)
+                         .build();
     }
 }
