@@ -1,4 +1,5 @@
 package org.choongang.global.entities;
 
-public class BaseMemberEntity {
+public abstract class BaseMemberEntity {
+
 }
