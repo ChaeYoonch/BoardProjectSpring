@@ -11,7 +11,12 @@ import org.springframework.security.web.SecurityFilterChain;
 public class SecurityConfig {
 
     @Bean // 스프링 관리 객체로 설정
-    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception { // 반환값 = http
+    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception { // 반환값 = http | 스프링 시큐리티 주 설정 위치
+        /* 로그인, 로그아웃 S */
+        http.formLogin(f -> { // 영역 도메인별로 나눠서 설정 O -> 람다 형태
+
+        });
+        /* 로그인, 로그아웃 E */
 
         return http.build();
     }
