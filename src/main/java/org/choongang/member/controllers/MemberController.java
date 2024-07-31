@@ -38,7 +38,7 @@ public class MemberController {
     }
 
     @GetMapping("/login")
-    public String login() { // 로그인
+    public String login(@Valid @ModelAttribute RequestLogin form, Errors errors) { // 로그인 | RequestLogin 커맨드 객체 form 형태 | 검증 -> Errors 추가
         return "front/member/login";
     }
 }
