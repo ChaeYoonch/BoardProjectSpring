@@ -16,4 +16,6 @@ public class RequestLogin { // 로그인 커맨드 객체 추가
     private String code; // 에러 코드 -> 글로벌 에러로 출력될 수 있도록 만들 예정
 
     private String defaultMessage;
+
+    private String redirectUrl; // 로그인 성공 시 이동할 주소
 }
