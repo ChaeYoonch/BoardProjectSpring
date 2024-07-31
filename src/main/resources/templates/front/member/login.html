@@ -10,6 +10,7 @@
                 <dt th:text="#{이메일}"></dt>
                 <dd>
                     <input type="text" name="email" th:field="*{email}">
+                    <div class="error" th:each="err : ${#fields.errors('email')}" th:text="${err}"></div>
                 </dd>
             </dl>
             <dl>
