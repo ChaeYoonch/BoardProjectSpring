@@ -1,9 +1,12 @@
 package org.choongang.member;
 
+import org.choongang.member.entities.Authorities;
 import org.choongang.member.entities.Member;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Component;
+
+import java.util.List;
 
 @Component
 public class MemberUtil { // Member 편의 기능 추가 -> SecurityContextHolder 사용
@@ -14,9 +17,9 @@ public class MemberUtil { // Member 편의 기능 추가 -> SecurityContextHolde
 
     public boolean isAdmin() {
         if (isLogin()) {
-
+            Member member = getMember();
+            List<Authorities> authorities = member.getAuthorities(); // 위의 member 연결
         }
-
         return false;
     }
 
