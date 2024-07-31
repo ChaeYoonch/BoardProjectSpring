@@ -17,6 +17,6 @@ public class AuditorAwareImpl implements AuditorAware<String> {
     public Optional<String> getCurrentAuditor() {
         String email = memberUtil.isLogin() ? memberUtil.getMember().getEmail() : null; // String email = null;
 
-        return Optional.of(email); // 위의 email 값 연결
+        return Optional.ofNullable(email); // 위의 email 값 연결 | of 보다 ofNullable 을 더 많이 사용하므로 ofNullable 사용
     }
 }
