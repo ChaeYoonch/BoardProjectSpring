@@ -103,11 +103,14 @@ public class MemberController {
 
     @ResponseBody @GetMapping("/test5")
     public void test5() {
-        Board board = Board.builder()
-                           .bid("freetalk")
-                           .bname("자유 게시판")
+        /* Board board = Board.builder()
+                           .bId("freetalk")
+                           .bName("자유 게시판")
                            .build();
 
+        boardRepository.saveAndFlush(board); */
+        Board board = boardRepository.findById("freetalk").orElse(null);
+        board.setBName("(수정)자유 게시판");
         boardRepository.saveAndFlush(board);
     }
 }
