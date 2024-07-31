@@ -2,6 +2,7 @@ package org.choongang.member.controllers;
 
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.choongang.member.services.MemberSaveService;
 import org.choongang.member.validators.JoinValidator;
 import org.springframework.stereotype.Controller;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.security.Principal;
 
+@Slf4j
 @Controller
 @RequestMapping("/member")
 @RequiredArgsConstructor
@@ -58,7 +60,7 @@ public class MemberController {
     }
 
     @ResponseBody @GetMapping("/test")
-    public void test(Principal principal) { // 일반 controller 내에서 void 사용 -> @ResponseBody | 로그인한 회원 정보의 아이디 확인
-
+    public void test(Principal principal) { // 일반 controller 내에서 void 사용 -> @ResponseBody
+        log.info("로그인 아이디 : {}", principal.getName()); // 로그인한 회원의 정보 : 아이디 확인
     }
 }
