@@ -3,12 +3,14 @@ package org.choongang.member.controllers;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.choongang.board.entities.Board;
-import org.choongang.board.repositories.BoardRepository;
+
+import org.choongang.global.exceptions.CommonException;
+import org.choongang.global.exceptions.ExceptionProcessor;
+import org.choongang.global.exceptions.script.AlertRedirectException;
 import org.choongang.member.MemberInfo;
-import org.choongang.member.MemberUtil;
 import org.choongang.member.services.MemberSaveService;
 import org.choongang.member.validators.JoinValidator;
+import org.springframework.http.HttpStatus;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -24,12 +26,12 @@ import java.security.Principal;
 @RequestMapping("/member")
 @RequiredArgsConstructor
 @SessionAttributes("requestLogin")
-public class MemberController {
+public class MemberController implements ExceptionProcessor {
 
     private final JoinValidator joinValidator; // 의존성 주입 O
     private final MemberSaveService memberSaveService;
-    private final MemberUtil memberUtil;
-    private final BoardRepository boardRepository;
+    //private final MemberUtil memberUtil;
+    //private final BoardRepository boardRepository;
 
     @ModelAttribute
     public RequestLogin requestLogin() {
@@ -38,6 +40,10 @@ public class MemberController {
 
     @GetMapping("/join") // url 주소
     public String join(@ModelAttribute RequestJoin form) { // 회원가입
+        /* boolean result = false;
+        if (!result) {
+            throw new AlertRedirectException("테스트 예외", "/mypage", HttpStatus.BAD_REQUEST);
+        } */
         return "front/member/join";
     }
 
@@ -68,21 +74,21 @@ public class MemberController {
         return "front/member/login";
     }
     /* 로그인 정보 가져오기 4가지 방법 */
-    @ResponseBody @GetMapping("/test")
+    /* @ResponseBody @GetMapping("/test")
     public void test(Principal principal) { // 일반 controller 내에서 void 사용 -> @ResponseBody
         if (principal != null) {
             log.info("로그인 아이디 : {}", principal.getName()); // 로그인한 회원의 정보 : 아이디 확인
         }
-    }
+    } */
 
-    @ResponseBody @GetMapping("/test2")
+    /*@ResponseBody @GetMapping("/test2")
     public void test2(@AuthenticationPrincipal MemberInfo memberInfo) { // 스프링 시큐리티 -> 현재 로그인 O -> 확인 O
         if(memberInfo != null) {
             log.info("로그인 회원 : {}", memberInfo.toString()); // memberInfo 객체 바로 주입
         }
-    }
+    } */
 
-    @ResponseBody @GetMapping("/test3")
+    /*@ResponseBody @GetMapping("/test3")
     public void test3() {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication(); // setAuthentication : 로그인 상태 강제로 유지
 
@@ -93,24 +99,24 @@ public class MemberController {
         } else { // 미로그인 상태 - String / anonymousUser (getPrincipal())
             log.info("getPrincipal() : {}", authentication.getPrincipal());
         }
-    }
+    } */
 
-    @ResponseBody @GetMapping("/test4")
+    /*@ResponseBody @GetMapping("/test4")
     public void test4() {
         log.info("로그인 여부 : {}", memberUtil.isLogin()); // 로그인 여부
         log.info("로그인 회원 : {}", memberUtil.getMember());
-    }
+    } */
 
-    @ResponseBody @GetMapping("/test5")
+    /*@ResponseBody @GetMapping("/test5")
     public void test5() {
         /* Board board = Board.builder()
                            .bId("freetalk")
                            .bName("자유 게시판")
                            .build();
 
-        boardRepository.saveAndFlush(board); */
+        boardRepository.saveAndFlush(board);
         Board board = boardRepository.findById("freetalk").orElse(null);
         board.setBName("(수정)자유 게시판");
         boardRepository.saveAndFlush(board);
-    }
+    } */
 }
