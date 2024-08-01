@@ -9,6 +9,8 @@
             <th:block sec:authorize="isAuthenticated()"> <!-- 로그인 상태 -->
                 <a th:href="@{/member/logout}" th:text="#{로그아웃}"></a>
                 <a th:href="@{/member/mypage}" th:text="#{마이페이지}"></a>
+
+                <a sec:authorize="hasAnyAuthority('ADMIN')" th:href="@{/admin}" target="_blank" th:text="#{사이트_관리}"></a> <!-- "_blank" : 새 창 -->
             </th:block>
         </div>
     </header>
