@@ -19,7 +19,7 @@ public class MemberAuthenticationEntryPoint implements AuthenticationEntryPoint 
          * 관리자 페이지로 접근한 경우 - 응답 코드 401, 에러 페이지 출력
          */
 
-        String uri = request.getRequestURI(); // 주소로 알아봄 | uri -> ContextPath 지우고 ToString 을 붙여서 이동시킴
+        String uri = request.getRequestURI(); // 주소로 알아봄 | uri -> ContextPath 지우고 QueryString 을 붙여서 이동시킴
         if (uri.contains("/admin")) { // 관리자 페이지
             response.sendError(HttpServletResponse.SC_UNAUTHORIZED); // 응답 코드 401
         } else { // 회원 전용 페이지
