@@ -1,5 +1,7 @@
 package org.choongang.member.services;
 
-public class MemberAuthenticationEntryPoint {
+import org.springframework.security.web.AuthenticationEntryPoint;
+
+public class MemberAuthenticationEntryPoint implements AuthenticationEntryPoint {
 
 }
