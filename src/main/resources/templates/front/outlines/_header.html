@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
     <header th:fragment="common"> <!-- 공통 / 로고 | 검색 창 등 -->
-        <h1>상단 영역</h1>
+        <div>
+            <th:block sec:authorize="isAnonymous()">
+
+            </th:block>
+        </div>
     </header>
 </html>
