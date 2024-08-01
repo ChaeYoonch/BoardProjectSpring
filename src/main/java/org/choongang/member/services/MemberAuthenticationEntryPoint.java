@@ -6,7 +6,6 @@ import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.web.AuthenticationEntryPoint;
 
-import javax.swing.*;
 import java.io.IOException;
 
 public class MemberAuthenticationEntryPoint implements AuthenticationEntryPoint {
@@ -23,7 +22,7 @@ public class MemberAuthenticationEntryPoint implements AuthenticationEntryPoint 
         if (uri.contains("/admin")) { // 관리자 페이지
             response.sendError(HttpServletResponse.SC_UNAUTHORIZED); // 응답 코드 401
         } else { // 회원 전용 페이지
-
+            response.sendRedirect(request.getContextPath() + "/member/login");
         }
     }
 }
