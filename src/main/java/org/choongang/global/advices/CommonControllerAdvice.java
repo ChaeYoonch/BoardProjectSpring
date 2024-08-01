@@ -21,4 +21,9 @@ public class CommonControllerAdvice { // 모든 컨트롤러 공통 값 유지 (
     public boolean isLogin() { // 로그인 여부
         return memberUtil.isLogin();
     }
+
+    @ModelAttribute("isAdmin")
+    public boolean isAdmin() { // 관리자 여부
+        return memberUtil.isAdmin();
+    }
 }
