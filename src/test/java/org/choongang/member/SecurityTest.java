@@ -30,8 +30,15 @@ public class SecurityTest {
 
     @Test
     @WithMockUser
-    void test2() throws Exception {
+    void test2() throws Exception { // mypage
         mockMvc.perform(get("/mypage"))
                .andDo(print());
+    }
+
+    @Test
+    @WithMockUser
+    void test3() throws Exception { // admin 관리자 페이지
+        mockMvc.perform(get("/admin"))
+                .andDo(print());
     }
 }
