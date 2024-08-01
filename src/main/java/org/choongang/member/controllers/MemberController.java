@@ -121,9 +121,17 @@ public class MemberController implements ExceptionProcessor {
         boardRepository.saveAndFlush(board);
     } */
 
+    @ResponseBody
     @GetMapping("/test1")
-    @PreAuthorize("isAuthenticated()") // 회원만 접근 가능 -> 권한 통제 O
+    // @PreAuthorize("isAuthenticated()") // 회원만 접근 가능 -> 권한 통제 O
     public void test1() {
         log.info("test1 - 회원만 접근 가능");
+    }
+
+    @ResponseBody
+    @GetMapping("/test2")
+    @PreAuthorize("hasAnyAuthority('ADMIN')")
+    public void test2() {
+        log.info("test2 - 관리자만 접근 가능");
     }
 }
