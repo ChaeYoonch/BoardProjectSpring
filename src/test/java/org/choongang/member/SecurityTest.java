@@ -36,7 +36,7 @@ public class SecurityTest {
     }
 
     @Test
-    @WithMockUser
+    @WithMockUser(username = "user01@test.org", authorities = "ADMIN")
     void test3() throws Exception { // admin 관리자 페이지
         mockMvc.perform(get("/admin"))
                 .andDo(print());
