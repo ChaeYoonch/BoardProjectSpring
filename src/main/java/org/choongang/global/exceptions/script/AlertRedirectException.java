@@ -13,13 +13,13 @@ public class AlertRedirectException extends AlertException {
     public AlertRedirectException(String message, String url, HttpStatus status, String target) {
         super(message, status);
 
-        target = StringUtils.hasText(target) ? target : "self"; // target 있으면 target, 없으면 self (= 현재 창)
+        target = StringUtils.hasText(target) ? target : "self"; // target 있으면 target, 없으면 = null 이면, self (= 현재 창)
 
         this.url = url;
         this.target = target;
     }
 
     public AlertRedirectException(String message, String url, HttpStatus status) { // target 이 없는 상태 -> self 로 고정
-        this(message, url, status, null);
+        this(message, url, status, null); // this(message, url, status, "self");
     }
 }
