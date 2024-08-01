@@ -25,11 +25,16 @@ public interface ExceptionProcessor {
                 String script = String.format("alert('%s');", e.getMessage());
 
                 if (e instanceof AlertBackException alertBackException) { // AlertBackException 의 하위 라면 | alertBackException -> target 을 가져오기 위해
-                    script += String.format("%s.history.back();", alertBackException.getTarget());
+                    // script += String.format("%s.history.back();", alertBackException.getTarget());
                 }
 
                 if (e instanceof AlertRedirectException alertRedirectException) { // AlertRedirectException 의 하위 라면
-                    script += String.format("%s.location.replace('%s');", alertRedirectException.getTarget(), alertRedirectException.getUrl());
+                    String url = alertRedirectException.getUrl();
+                    if (!url.startsWith("http")) { // 외부 URL 이 아닌 경우
+                        url = request.getContextPath() + url;
+                    }
+
+                    script += String.format("%s.location.replace('%s');", alertRedirectException.getTarget(), url); // alertRedirectException.getUrl() -> url
                 }
 
                 mv.addObject("script", script); // 위의 3개 script 연동
