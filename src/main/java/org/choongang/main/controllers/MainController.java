@@ -12,5 +12,6 @@ public class MainController implements ExceptionProcessor { // 메인 페이지
     @GetMapping
     public String index() {
 
+        return "front/main/index"; // 주소 X | template 경로
     }
 }
