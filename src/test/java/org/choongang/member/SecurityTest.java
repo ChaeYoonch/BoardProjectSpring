@@ -21,7 +21,7 @@ public class SecurityTest {
     private MockMvc mockMvc;
 
     @Test
-    void test1() throws Exception {
+    void test1() throws Exception { // 컨트롤러 주소 기준 통제
         mockMvc.perform(post("/member/join")
                .with(csrf().asHeader())
                .param("email", "user01@test.org"))
@@ -39,6 +39,6 @@ public class SecurityTest {
     @WithMockUser(username = "user01@test.org", authorities = "ADMIN")
     void test3() throws Exception { // admin 관리자 페이지
         mockMvc.perform(get("/admin"))
-                .andDo(print());
+               .andDo(print());
     }
 }
