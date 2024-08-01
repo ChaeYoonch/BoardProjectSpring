@@ -9,8 +9,8 @@ import java.util.Map;
 
 @Getter @Setter
 public class CommonException extends RuntimeException {
-    private HttpStatus status; // 조회 가능
-    private Map<String, List<String>> errorMessage; // 수정 가능
+    private HttpStatus status; // 조회 가능 | @Getter
+    private Map<String, List<String>> errorMessage; // 수정 가능 | @Setter
 
     public CommonException(String message) {
         this(message, HttpStatus.INTERNAL_SERVER_ERROR); // 기본 응답 코드는 500 | 직접 설정한 오류 이쪽으로 !
