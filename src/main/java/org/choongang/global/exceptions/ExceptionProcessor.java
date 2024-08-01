@@ -1,7 +1,9 @@
 package org.choongang.global.exceptions;
 
 import jakarta.servlet.http.HttpServletRequest;
+import org.choongang.global.exceptions.script.AlertBackException;
 import org.choongang.global.exceptions.script.AlertException;
+import org.choongang.global.exceptions.script.AlertRedirectException;
 import org.springframework.http.HttpStatus;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -21,6 +23,16 @@ public interface ExceptionProcessor {
             if (e instanceof AlertException) { // AlertException 의 하위 라면
                 tpl = "common/_execute_script"; // 자바 스크립트 형태의 Alert 메세지인 경우 common/_execute_script 로 이동함!
                 String script = String.format("alert('%s');", e.getMessage());
+
+                if (e instanceof AlertBackException alertBackException) { // AlertBackException 의 하위 라면 | alertBackException -> target 을 가져오기 위해
+                    script += String.format("%s.history.back();", alertBackException.getTarget());
+                }
+
+                if (e instanceof AlertRedirectException alertRedirectException) { // AlertRedirectException 의 하위 라면
+                    script += String.format("%s.location.replace('%s');", alertRedirectException.getTarget(), alertRedirectException.getUrl());
+                }
+
+                mv.addObject("script", script); // 위의 3개 script 연동
             }
         }
 
