@@ -14,6 +14,7 @@ public interface ExceptionProcessor {
         }
 
         ModelAndView mv = new ModelAndView(); // 반환값이 ModelAndView
+        mv.addObject("message", e.getMessage());
         mv.setStatus(status); // 위의 status 연동한 것!
         mv.setViewName("error/error");
         return mv;
