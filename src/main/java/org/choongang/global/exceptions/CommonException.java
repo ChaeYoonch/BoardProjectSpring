@@ -1,5 +1,5 @@
 package org.choongang.global.exceptions;
 
-public class CommonException {
+public class CommonException extends RuntimeException{
 
 }
