@@ -11,6 +11,7 @@ import org.choongang.member.MemberInfo;
 import org.choongang.member.services.MemberSaveService;
 import org.choongang.member.validators.JoinValidator;
 import org.springframework.http.HttpStatus;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -119,4 +120,10 @@ public class MemberController implements ExceptionProcessor {
         board.setBName("(수정)자유 게시판");
         boardRepository.saveAndFlush(board);
     } */
+
+    @GetMapping("/test1")
+    @PreAuthorize("isAuthenticated()") // 회원만 접근 가능 -> 권한 통제 O
+    public void test1() {
+        log.info("test1 - 회원만 접근 가능");
+    }
 }
