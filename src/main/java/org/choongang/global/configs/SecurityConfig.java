@@ -33,9 +33,11 @@ public class SecurityConfig {
 
         /* 인가 (접근 통제) 설정 S */
         http.authorizeHttpRequests(c -> { // url 로 나눠서 접근
+            /* c.requestMatchers("/member/**").anonymous()
+             .requestMatchers("/admin/**").hasAnyAuthority("ADMIN").anyRequest().authenticated(); // 회원 전용 */
             c.requestMatchers("/mypage/**").authenticated() // mypage 포함 하위 경로 전체 | authenticated() : 회원인 경우
-                    .requestMatchers("/admin/**").hasAnyAuthority("ADMIN") // admin 포함 하위 경로 전체 | hasAllAuthority() : 여러 개 중 1개 | hasAuthority() : 1개만
-                    .anyRequest().permitAll(); // anonymous : 미로그인 사용자인 경우
+             .requestMatchers("/admin/**").hasAnyAuthority("ADMIN") // admin 포함 하위 경로 전체 | hasAllAuthority() : 여러 개 중 1개 | hasAuthority() : 1개만
+                    .anyRequest().permitAll(); // anonymous : 미로그인 사용자인 경우 | 비회원 전체 -> 페이지 1개
         });
         /* 인가 (접근 통제) 설정 E */
 
