@@ -11,4 +11,9 @@ import java.util.Map;
 public class CommonException extends RuntimeException {
     private HttpStatus status; // 조회 가능
     private Map<String, List<String>> errorMessage; // 수정 가능
+
+    public CommonException(String message, HttpStatus status) {
+        super(message);
+        this.status = status;
+    }
 }
