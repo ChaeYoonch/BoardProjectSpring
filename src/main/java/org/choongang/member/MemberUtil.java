@@ -22,12 +22,13 @@ public class MemberUtil { // Member 편의 기능 추가 -> SecurityContextHolde
             List<Authorities> authorities = member.getAuthorities(); // 위의 member 연결
             return authorities.stream().anyMatch(s -> s.getAuthority() == Authority.ADMIN); // 값 중에서 1개라도 매칭되면 됨!
         }
+
         return false;
     }
 
     public Member getMember() { // 의존성 주입으로 쉽게 사용 가능 -> 2차 가공 | MemberInfo X-> Member 사용
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        if (authentication.isAuthenticated() && authentication.getPrincipal() instanceof MemberInfo) { // 구현 객체 타입도 확인
+        if (authentication != null && authentication.isAuthenticated() && authentication.getPrincipal() instanceof MemberInfo) { // 구현 객체 타입도 확인 | null 이 아닌 경우 추가
             MemberInfo memberInfo = (MemberInfo) authentication.getPrincipal(); // (MemberInfo) : 형변환
 
             return memberInfo.getMember();
