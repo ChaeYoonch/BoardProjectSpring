@@ -8,6 +8,7 @@ import org.choongang.file.repositories.FileInfoRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Objects;
 
 @Service
 @RequiredArgsConstructor
@@ -53,15 +54,20 @@ public class FileInfoService {
 
     }
 
-    public String getFileUrl(Long seq) { // seq : 파일 등록 번호로 찾을 수 있음 -> 파일 Url
+    public String getFileUrl(FileInfo item) { // seq : 파일 등록 번호로 찾을 수 있음 -> 파일 Url
 
     }
 
-    public String getFilePath(Long seq) { // seq : 파일 등록 번호로 찾을 수 있음 -> 파일 경로
+    public String getFilePath(FileInfo item) { // seq : 파일 등록 번호로 찾을 수 있음 -> 파일 경로
 
     }
 
     public String getFolder(long seq) { // seq : 파일 등록 번호로 찾을 수 있음
        return String.valueOf(seq % 10L); // 10개씩 나눔
+    }
+
+    public String getFileName(FileInfo item) {
+        String fileName = item.getSeq() + Objects.requireNonNullElse(item.getExtension(), "");
+        return fileName;
     }
 }
