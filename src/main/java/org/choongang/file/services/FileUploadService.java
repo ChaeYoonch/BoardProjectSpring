@@ -11,6 +11,8 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.UUID;
 
 @Service
@@ -21,7 +23,7 @@ public class FileUploadService {
     private final FileInfoRepository fileInfoRepository;
     private final FileProperties properties; // 경로 설정용
 
-    public void upload(MultipartFile[] files, String gid, String location) {
+    public List<FileInfo> upload(MultipartFile[] files, String gid, String location) {
         /**
          * 1. 파일 정보 저장
          * 2. 파일을 서버로 이동
@@ -30,6 +32,8 @@ public class FileUploadService {
          */
 
         gid = StringUtils.hasText(gid) ? gid : UUID.randomUUID().toString();
+
+        List<FileInfo> uploadedFiles = new ArrayList<>(); // 업로드 성공 시에만 담아줌
 
         /* 1. 파일 정보 저장 */ // image.abc.def.png -> 가장 마지막 . 찾아 확장자 확인
         for (MultipartFile file : files) {
