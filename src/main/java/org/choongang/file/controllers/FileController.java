@@ -14,7 +14,5 @@ public class FileController { //REST 형태로 작업
     public void upload(@RequestPart("file") MultipartFile[] files, // "file" 이 이름 | 1개는 낱개로 | 여러 개는 배열 형태로
                        @RequestParam(name="gid", required = false) String gid,
                        @RequestParam(name="location", required = false) String location) { // Multipart file 형태
-
-        gid = StringUtils.hasText(gid) ? gid : UUID.randomUUID().toString();
     }
 }
