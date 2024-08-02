@@ -51,7 +51,7 @@ public class FileUploadService {
             String uploadDir = properties.getPath() + "/" + (seq % 10L); // 10개로 분산해서 만들어줌
             File dir = new File(uploadDir);
             if (!dir.exists() && !dir.isDirectory()) { // exists = 존재 여부
-
+                dir.mkdir(); // 폴더가 없으면 1개 만들어주는 것
             }
         }
     }
