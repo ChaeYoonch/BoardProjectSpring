@@ -23,4 +23,6 @@ public class FileInfo extends BaseEntity {
 
     private String fileName; // 파일명
     private String contentType; // 파일 형식
+
+    private boolean done; // 그룹 작업 완료 여부
 }
