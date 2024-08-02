@@ -21,13 +21,13 @@ public class FileInfo extends BaseMemberEntity {
     private Long seq; // 서버에 업로드 될 파일 이름 : seq.확장자
 
     @Column(length = 45, nullable = false)
-    private String gid = UUID.randomUUID().toString(); // 그룹 ID
+    private String gid = UUID.randomUUID().toString(); // 그룹 ID | 필수
 
     @Column(length = 45)
     private String location; // 그룹 안에 세부 위치
 
     @Column(length = 80, nullable = false)
-    private String fileName; // 파일명
+    private String fileName; // 파일명 | 필수
 
     @Column(length = 80)
     private String contentType; // 파일 형식
