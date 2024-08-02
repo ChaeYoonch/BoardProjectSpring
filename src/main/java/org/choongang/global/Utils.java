@@ -59,4 +59,8 @@ public class Utils { // 빈의 이름 - utils
         ms.setUseCodeAsDefaultMessage(true);
         return messages;
     }
+
+    public String getMessage(String code) { // code 로 연동할 수 있도록
+
+    }
 }
