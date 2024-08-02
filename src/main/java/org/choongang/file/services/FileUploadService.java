@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.io.File;
 import java.util.UUID;
 
 @Service
@@ -46,6 +47,12 @@ public class FileUploadService {
             fileInfoRepository.saveAndFlush(fileInfo); // 위의 fileInfo 에 담은 값들 가져옴
 
             /* 2. 파일을 서버로 이동 */ // 파일을 분산해서 저장
+            long seq = fileInfo.getSeq(); // seq 값 가져옴
+            String uploadDir = properties.getPath() + "/" + (seq % 10L); // 10개로 분산해서 만들어줌
+            File dir = new File(uploadDir);
+            if (!dir.exists() && !dir.isDirectory()) { // exists = 존재 여부
+
+            }
         }
     }
 }
