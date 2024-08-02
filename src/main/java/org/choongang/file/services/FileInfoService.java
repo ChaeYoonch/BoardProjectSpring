@@ -40,4 +40,13 @@ public class FileInfoService {
     public List<FileInfo> getList(String gid, String location, FileStatus status) {// gid - 그룹 ID 로 조회
         return null;
     }
+
+    /**
+     * 파일 정보 추가 처리
+     *  - fileUrl, filePath
+     * @param item
+     */
+    public void addFileInfo(FileInfo item) {// 공통 메서드 정의
+
+    }
 }
