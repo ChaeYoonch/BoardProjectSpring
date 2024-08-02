@@ -61,6 +61,8 @@ public class Utils { // 빈의 이름 - utils
     }
 
     public String getMessage(String code) { // code 로 연동할 수 있도록
+        List<String> messages = getCodeMessages(new String[] {code});
 
+        return messages.isEmpty() ? code : messages.get(0);
     }
 }
