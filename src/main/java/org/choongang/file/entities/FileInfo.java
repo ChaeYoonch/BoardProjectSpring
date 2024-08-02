@@ -17,8 +17,7 @@ import java.util.UUID;
 @Builder
 @NoArgsConstructor @AllArgsConstructor
 public class FileInfo extends BaseMemberEntity {
-    @Id
-    @GeneratedValue
+    @Id @GeneratedValue
     private Long seq; // 서버에 업로드 될 파일 이름 : seq.확장자
 
     @Column(length = 45, nullable = false)
@@ -27,7 +26,10 @@ public class FileInfo extends BaseMemberEntity {
     @Column(length = 45)
     private String location; // 그룹 안에 세부 위치
 
+    @Column(length = 80, nullable = false)
     private String fileName; // 파일명
+
+    @Column(length = 80)
     private String contentType; // 파일 형식
 
     private boolean done; // 그룹 작업 완료 여부
