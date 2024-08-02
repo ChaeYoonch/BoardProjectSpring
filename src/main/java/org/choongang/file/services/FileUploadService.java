@@ -20,5 +20,10 @@ public class FileUploadService {
          */
 
         gid = StringUtils.hasText(gid) ? gid : UUID.randomUUID().toString();
+
+        /* 1. 파일 정보 저장 */
+        for (MultipartFile file : files) {
+
+        }
     }
 }
