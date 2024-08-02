@@ -1,10 +1,13 @@
 package org.choongang.file.services;
 
+import ch.qos.logback.core.property.FileExistsPropertyDefiner;
 import lombok.RequiredArgsConstructor;
 import org.choongang.file.constants.FileStatus;
 import org.choongang.file.entities.FileInfo;
 import org.choongang.file.exceptions.FileNotFoundException;
 import org.choongang.file.repositories.FileInfoRepository;
+import org.choongang.global.configs.FileProperties;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -12,9 +15,11 @@ import java.util.Objects;
 
 @Service
 @RequiredArgsConstructor
+@EnableConfigurationProperties(FileProperties.class)
 public class FileInfoService {
 
     private final FileInfoRepository infoRepository;
+    private final FileProperties properties;
 
     /**
      * 파일 1개 조회
