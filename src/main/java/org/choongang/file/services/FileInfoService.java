@@ -52,4 +52,12 @@ public class FileInfoService {
     public void addFileInfo(FileInfo item) {// 공통 메서드 정의
 
     }
+
+    public String getFileUrl(Long seq) { // seq : 파일 등록 번호로 찾을 수 있음
+
+    }
+
+    public String getFilePath(Long seq) { // seq : 파일 등록 번호로 찾을 수 있음
+
+    }
 }
