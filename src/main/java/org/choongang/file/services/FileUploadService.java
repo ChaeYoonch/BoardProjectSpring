@@ -10,6 +10,7 @@ import org.springframework.util.StringUtils;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.UUID;
 
 @Service
@@ -55,6 +56,14 @@ public class FileUploadService {
             }
 
             String uploadPath = uploadDir + "/" + seq + extension; // 파일 경로
+            try {
+                file.transferTo(new File(uploadPath));
+            } catch (IOException e) {
+                e.printStackTrace();
+                // 파일 이동 실패 시 정보 삭제
+                fileInfoRepository.delete(fileInfo); // 올라가지 않은 파일 (오류로 올라감 X) delete
+                fileInfoRepository.flush();
+            }
         }
     }
 }
