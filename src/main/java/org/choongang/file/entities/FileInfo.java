@@ -21,5 +21,6 @@ public class FileInfo extends BaseEntity {
     private String gid; // 그룹 ID
     private String location; // 그룹 안에 세부 위치
 
-    private String fileName;
+    private String fileName; // 파일명
+    private String contentType; // 파일 형식
 }
