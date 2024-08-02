@@ -3,6 +3,7 @@ package org.choongang.file.services;
 import lombok.RequiredArgsConstructor;
 import org.choongang.file.constants.FileStatus;
 import org.choongang.file.entities.FileInfo;
+import org.choongang.file.exceptions.FileNotFoundException;
 import org.choongang.file.repositories.FileInfoRepository;
 import org.springframework.stereotype.Service;
 
@@ -12,7 +13,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class FileInfoService {
 
-    private final FileInfoRepository fileInfoRepository;
+    private final FileInfoRepository infoRepository;
 
     /**
      * 파일 1개 조회
@@ -20,8 +21,9 @@ public class FileInfoService {
      * @return
      */
     public FileInfo get(Long seq) {
+        FileInfo item = infoRepository.findById(seq).orElseThrow(FileNotFoundException::new);
 
-        return null;
+        return item;
     }
 
     /**
