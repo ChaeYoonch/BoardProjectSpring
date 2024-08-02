@@ -24,9 +24,7 @@ public class FileControllerTest {
     private MockMvc mockMvc;
 
     private MockMultipartFile file1; // ** mockMvc
-    private MockMultipartFile file2;
-
-    private MultipartFile[] files;
+    private MockMultipartFile file2; // ** mockMvc
 
     @BeforeEach
     void init() {
