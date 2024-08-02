@@ -3,6 +3,8 @@ package org.choongang.file.services;
 import lombok.RequiredArgsConstructor;
 import org.choongang.file.entities.FileInfo;
 import org.choongang.file.repositories.FileInfoRepository;
+import org.choongang.global.configs.FileProperties;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 import org.springframework.web.multipart.MultipartFile;
@@ -11,9 +13,11 @@ import java.util.UUID;
 
 @Service
 @RequiredArgsConstructor // 의존성 주입에 필수!!
+@EnableConfigurationProperties(FileProperties.class) // 범주화 해서 저장하기 용이
 public class FileUploadService {
 
     private final FileInfoRepository fileInfoRepository;
+    private final FileProperties properties; // 경로 설정용
 
     public void upload(MultipartFile[] files, String gid, String location) {
         /**
@@ -40,6 +44,8 @@ public class FileUploadService {
                                         .build();
 
             fileInfoRepository.saveAndFlush(fileInfo); // 위의 fileInfo 에 담은 값들 가져옴
+
+            /* 2. 파일을 서버로 이동 */ // 파일을 분산해서 저장
         }
     }
 }
