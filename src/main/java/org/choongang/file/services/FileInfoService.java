@@ -22,7 +22,11 @@ public class FileInfoService {
      */
     public FileInfo get(Long seq) {
         FileInfo item = infoRepository.findById(seq).orElseThrow(FileNotFoundException::new);
-
+        /**
+         * 2차 가공
+         * 1. 파일을 접근할 수 있는 URL - 보여주기 위한 목적
+         * 2. 파일을 접근할 수 있는 PATH (경로) - 파일 삭제, 다운로드 등
+         */
         return item;
     }
 
