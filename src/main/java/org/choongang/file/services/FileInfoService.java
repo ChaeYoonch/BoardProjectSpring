@@ -1,6 +1,7 @@
 package org.choongang.file.services;
 
 import lombok.RequiredArgsConstructor;
+import org.choongang.file.constants.FileStatus;
 import org.choongang.file.entities.FileInfo;
 import org.choongang.file.repositories.FileInfoRepository;
 import org.springframework.stereotype.Service;
@@ -23,5 +24,14 @@ public class FileInfoService {
         return null;
     }
 
-    public List<FileInfo> getList(String gid, String location) // gid - 그룹 ID 로 조회
+    /**
+     * 파일 목록 조회
+     * @param gid
+     * @param location
+     * @param status - ALL : 완료 + 미완료 | DONE : 완료 | UNDONE : 미완료
+     * @return
+     */
+    public List<FileInfo> getList(String gid, String location, FileStatus status) {// gid - 그룹 ID 로 조회
+        return null;
+    }
 }
