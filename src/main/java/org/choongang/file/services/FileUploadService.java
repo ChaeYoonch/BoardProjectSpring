@@ -33,7 +33,7 @@ public class FileUploadService {
 
         gid = StringUtils.hasText(gid) ? gid : UUID.randomUUID().toString();
 
-        List<FileInfo> uploadedFiles = new ArrayList<>(); // 업로드 성공 시에만 담아줌
+        List<FileInfo> uploadedFiles = new ArrayList<>(); // 업로드 성공 시에만 담아줌 **
 
         /* 1. 파일 정보 저장 */ // image.abc.def.png -> 가장 마지막 . 찾아 확장자 확인
         for (MultipartFile file : files) {
@@ -63,7 +63,7 @@ public class FileUploadService {
             try {
                 file.transferTo(new File(uploadPath));
 
-                uploadedFiles.add(fileInfo); // 업로드 성공 파일 정보
+                uploadedFiles.add(fileInfo); // 업로드 성공 파일 정보 **
 
             } catch (IOException e) {
                 e.printStackTrace();
