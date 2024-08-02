@@ -7,13 +7,13 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.choongang.global.entities.BaseEntity;
+import org.choongang.global.entities.BaseMemberEntity;
 
 @Data
 @Entity
 @Builder
 @NoArgsConstructor @AllArgsConstructor
-public class FileInfo extends BaseEntity {
+public class FileInfo extends BaseMemberEntity {
     @Id
     @GeneratedValue
     private Long seq; // 서버에 업로드 될 파일 이름 : seq.확장자
