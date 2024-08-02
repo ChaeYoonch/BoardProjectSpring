@@ -1,5 +1,6 @@
 package org.choongang.file.entities;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
@@ -18,6 +19,7 @@ public class FileInfo extends BaseMemberEntity {
     @GeneratedValue
     private Long seq; // 서버에 업로드 될 파일 이름 : seq.확장자
 
+    @Column(length = 45)
     private String gid; // 그룹 ID
     private String location; // 그룹 안에 세부 위치
 
