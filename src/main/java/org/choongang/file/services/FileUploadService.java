@@ -53,6 +53,8 @@ public class FileUploadService {
             if (!dir.exists() && !dir.isDirectory()) { // exists = 존재 여부
                 dir.mkdir(); // 폴더가 없으면 1개 만들어주는 것
             }
+
+            String uploadPath = uploadDir + "/" + seq + extension; // 파일 경로
         }
     }
 }
