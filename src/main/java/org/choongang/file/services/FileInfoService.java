@@ -61,12 +61,14 @@ public class FileInfoService {
 
     }
 
+    // 브라우저 접근 주소
     public String getFileUrl(FileInfo item) { // seq : 파일 등록 번호로 찾을 수 있음 -> 파일 Url
         return request.getContextPath() + properties.getUrl() + "/" + getFolder(item.getSeq()) + "/" + getFileName(item); // ContextPath & Url & Folder & FileName
     }
 
+    // 서버 업로드 경로
     public String getFilePath(FileInfo item) { // seq : 파일 등록 번호로 찾을 수 있음 -> 파일 경로
-
+        return properties.getPath() + "/" + getFolder(item.getSeq()) + "/" + getFileName(item);
     }
 
     public String getFolder(long seq) { // seq : 파일 등록 번호로 찾을 수 있음
