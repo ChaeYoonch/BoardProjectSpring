@@ -53,11 +53,15 @@ public class FileInfoService {
 
     }
 
-    public String getFileUrl(Long seq) { // seq : 파일 등록 번호로 찾을 수 있음
+    public String getFileUrl(Long seq) { // seq : 파일 등록 번호로 찾을 수 있음 -> 파일 Url
 
     }
 
-    public String getFilePath(Long seq) { // seq : 파일 등록 번호로 찾을 수 있음
+    public String getFilePath(Long seq) { // seq : 파일 등록 번호로 찾을 수 있음 -> 파일 경로
 
+    }
+
+    public String getFolder(long seq) { // seq : 파일 등록 번호로 찾을 수 있음
+       return String.valueOf(seq % 10L); // 10개씩 나눔
     }
 }
