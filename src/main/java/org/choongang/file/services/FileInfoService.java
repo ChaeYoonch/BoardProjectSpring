@@ -1,6 +1,7 @@
 package org.choongang.file.services;
 
 import ch.qos.logback.core.property.FileExistsPropertyDefiner;
+import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
 import org.choongang.file.constants.FileStatus;
 import org.choongang.file.entities.FileInfo;
@@ -20,6 +21,7 @@ public class FileInfoService {
 
     private final FileInfoRepository infoRepository;
     private final FileProperties properties;
+    private final HttpServletRequest request; // url 에서 ContextPath 연결 위해
 
     /**
      * 파일 1개 조회
@@ -60,7 +62,7 @@ public class FileInfoService {
     }
 
     public String getFileUrl(FileInfo item) { // seq : 파일 등록 번호로 찾을 수 있음 -> 파일 Url
-
+        return request.getContextPath() + properties.getUrl() + "/" + getFolder(item.getSeq()) + "/" + getFileName(item); // ContextPath & Url & Folder & FileName
     }
 
     public String getFilePath(FileInfo item) { // seq : 파일 등록 번호로 찾을 수 있음 -> 파일 경로
