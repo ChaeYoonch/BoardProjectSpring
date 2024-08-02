@@ -62,6 +62,9 @@ public class FileUploadService {
             String uploadPath = uploadDir + "/" + seq + extension; // 파일 경로
             try {
                 file.transferTo(new File(uploadPath));
+
+                uploadedFiles.add(fileInfo); // 업로드 성공 파일 정보
+
             } catch (IOException e) {
                 e.printStackTrace();
                 // 파일 이동 실패 시 정보 삭제
