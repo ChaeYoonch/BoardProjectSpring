@@ -14,6 +14,6 @@ public class FileUploadServiceTest {
 
     @Test
     void uploadTest() {
-        // MockMultipartFile -> 임시 파일
+        // MockMultipartFile -> 임시 파일 | Mock = 모의 객체
     }
 }
