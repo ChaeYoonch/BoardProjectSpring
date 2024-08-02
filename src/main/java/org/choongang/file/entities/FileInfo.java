@@ -19,4 +19,7 @@ public class FileInfo extends BaseEntity {
     private Long seq; // 서버에 업로드 될 파일 이름 : seq.확장자
 
     private String gid; // 그룹 ID
+    private String location; // 그룹 안에 세부 위치
+
+    private String fileName;
 }
