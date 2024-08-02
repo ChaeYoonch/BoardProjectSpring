@@ -27,6 +27,9 @@ public class FileInfoService {
          * 1. 파일을 접근할 수 있는 URL - 보여주기 위한 목적
          * 2. 파일을 접근할 수 있는 PATH (경로) - 파일 삭제, 다운로드 등
          */
+
+        addFileInfo(item); // 객체 이므로 그냥 넣어도 참조 Ok
+
         return item;
     }
 
