@@ -23,7 +23,7 @@ public class FileUploadService {
 
         /* 1. 파일 정보 저장 */
         for (MultipartFile file : files) {
-
+            String fileName = file.getOriginalFilename(); // 업로드 파일 원래 이름
         }
     }
 }
