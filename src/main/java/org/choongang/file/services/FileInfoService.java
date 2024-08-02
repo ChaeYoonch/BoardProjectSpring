@@ -58,7 +58,11 @@ public class FileInfoService {
      * @param item
      */
     public void addFileInfo(FileInfo item) {// 공통 메서드 정의
+        String fileUrl = getFileUrl(item);
+        String filePath = getFilePath(item);
 
+        item.setFileUrl(fileUrl);
+        item.setFilePath(filePath);
     }
 
     // 브라우저 접근 주소
