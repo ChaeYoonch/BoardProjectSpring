@@ -58,6 +58,7 @@ public class FileInfoService {
      *  - fileUrl, filePath
      * @param item
      */
+
     public void addFileInfo(FileInfo item) {// 공통 메서드 정의
         String fileUrl = getFileUrl(item);
         String filePath = getFilePath(item);
