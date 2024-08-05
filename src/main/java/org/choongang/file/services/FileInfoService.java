@@ -48,6 +48,7 @@ public class FileInfoService {
      * @param status - ALL : 완료 + 미완료 | DONE : 완료 | UNDONE : 미완료
      * @return
      */
+
     public List<FileInfo> getList(String gid, String location, FileStatus status) {// gid - 그룹 ID 로 조회
         return null;
     }
