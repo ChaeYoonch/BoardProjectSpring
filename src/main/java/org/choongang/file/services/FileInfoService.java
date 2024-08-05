@@ -27,6 +27,7 @@ public class FileInfoService {
      * @param seq : 파일 등록 번호
      * @return
      */
+
     public FileInfo get(Long seq) {
         FileInfo item = infoRepository.findById(seq).orElseThrow(FileNotFoundException::new);
         /**
