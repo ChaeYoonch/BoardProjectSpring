@@ -4,7 +4,9 @@ import lombok.RequiredArgsConstructor;
 import org.choongang.file.entities.FileInfo;
 import org.choongang.file.repositories.FileInfoRepository;
 import org.choongang.member.MemberUtil;
+import org.choongang.member.entities.Member;
 import org.springframework.stereotype.Service;
+import org.springframework.util.StringUtils;
 
 @Service
 @RequiredArgsConstructor // 파일 정보 가져오는 데 필요함!
@@ -17,5 +19,8 @@ public class FileDeleteService {
         FileInfo data = infoService.get(seq); // seq 를 가져옴
         String filePath = data.getFilePath(); // 위의 data 연동 -> 가져온 seq 연결 O
         String createdBy = data.getCreatedBy(); // 위의 data 연동 -> 업로드한 회원 이메일
+
+        Member member = memberUtil.getMember(); // member 값 가져옴
+        if (StringUtils.hasText(createdBy) && memberUtil.isLogin())
     }
 }
