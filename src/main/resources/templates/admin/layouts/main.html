@@ -16,7 +16,7 @@
 
         <script th:if="${addCommonScript != null}" th:each="jsFile : ${addCommonScript}"
                 th:src="@{/common/js/{file}.js(file=${jsFile})}"></script>
-        <th:block layout:fragment="addCommonScript"></th:block> <!-- 공통으로 추가하는 모듈 : front & admin -->
+        <th:block layout:fragment="addCommonScript"></th:block> <!-- 공통으로 추가하는 모듈 : front & admin & mobile -->
 
         <script th:if="${addScript != null}" th:each="jsFile : ${addScript}"
                 th:src="@{/admin/js/{file}.js(file=${jsFile})}"></script>
