@@ -43,5 +43,7 @@ public class FileController { //REST 형태로 작업
     }
 
     @DeleteMapping("/delete/{seq}")
-    public void delete()
+    public void delete(@PathVariable("seq") Long seq) { // 낱개 삭제
+
+    }
 }
