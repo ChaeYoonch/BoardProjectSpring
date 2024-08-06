@@ -38,6 +38,8 @@ window.addEventListener("DOMContentLoaded", function () {
         el.addEventListener("click", function() {
             fileEl.value = ""; // 값 초기화
 
+            const dataset = this.dataset;
+
             fileEl.click();
         });
     }
