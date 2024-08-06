@@ -21,6 +21,8 @@ public class FileDeleteService {
         String createdBy = data.getCreatedBy(); // 위의 data 연동 -> 업로드한 회원 이메일
 
         Member member = memberUtil.getMember(); // member 값 가져옴
-        if (StringUtils.hasText(createdBy) && memberUtil.isLogin())
+        if (StringUtils.hasText(createdBy) && memberUtil.isLogin() && !member.getEmail().equals(createdBy)) { // equals 가 아닌 경우
+
+        }
     }
 }
