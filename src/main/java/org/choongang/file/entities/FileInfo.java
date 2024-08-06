@@ -35,9 +35,9 @@ public class FileInfo extends BaseMemberEntity {
 
     private boolean done; // 그룹 작업 완료 여부
 
-    @Transient // 내부용 -> DB 반영 X
+    @Transient // 임시 entity 내부용 -> DB 반영 X
     private String fileUrl; // 파일 접근 URL
 
-    @Transient // 내부용 -> DB 반영 X
+    @Transient // 임시 entity 내부용 -> DB 반영 X
     private String filePath; // 파일 업로드 경로
 }
