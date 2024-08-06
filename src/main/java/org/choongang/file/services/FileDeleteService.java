@@ -16,6 +16,6 @@ public class FileDeleteService {
     public FileInfo delete(Long seq) { // 낱개 삭제
         FileInfo data = infoService.get(seq); // seq 를 가져옴
         String filePath = data.getFilePath(); // 위의 data 연동 -> 가져온 seq 연결 O
-
+        String createdBy = data.getCreatedBy(); // 위의 data 연동 -> 업로드한 회원 이메일
     }
 }
