@@ -46,6 +46,6 @@ window.addEventListener("DOMContentLoaded", function () {
     /* 파일 업로드 처리 */
     fileEl.addEventListener("change", function (e) {
         const files = e.target.files;
-        console.log(files);
+        fileManager.upload(files, gid, location);
     });
 });
