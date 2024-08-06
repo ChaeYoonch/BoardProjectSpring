@@ -64,7 +64,7 @@ public class FileController { //REST 형태로 작업
     }
 
     @GetMapping("/list/{gid}")
-    public JSONData getList() { // 목록 조회
+    public JSONData getList(@PathVariable("gid") String gid, @RequestParam(name="location", required = false) String location) { // 목록 조회
 
     }
 }
