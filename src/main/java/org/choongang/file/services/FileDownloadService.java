@@ -5,6 +5,7 @@ import lombok.RequiredArgsConstructor;
 import org.choongang.file.entities.FileInfo;
 import org.springframework.stereotype.Service;
 
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 
@@ -20,7 +21,7 @@ public class FileDownloadService {
         String filePath = data.getFilePath(); // 위의 data 연결 -> 2차 가공
         String fileName = new String(data.getFileName().getBytes(), StandardCharsets.ISO_8859_1); // 위의 data 연결 -> 2차 가공 | 2byte 로 연동
 
-        try () {
+        try (FileInputStream fis = new FileInputStream(filePath)) { // 위의 filePath 연동
 
         } catch (IOException e) {
             e.printStackTrace();
