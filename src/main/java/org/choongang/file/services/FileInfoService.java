@@ -54,6 +54,10 @@ public class FileInfoService {
         return null;
     } // status -> done => 오버로드
 
+    public List<FileInfo> getList(String gid, String location) {
+
+    }
+
     /**
      * 파일 정보 추가 처리
      *  - fileUrl, filePath
