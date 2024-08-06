@@ -52,7 +52,7 @@ public class FileInfoService {
 
     public List<FileInfo> getList(String gid, String location, FileStatus status) { // gid - 그룹 ID 로 조회
         return null;
-    }
+    } // status -> done => 오버로드
 
     /**
      * 파일 정보 추가 처리
