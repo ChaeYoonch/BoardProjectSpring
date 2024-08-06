@@ -55,4 +55,9 @@ public class FileController { //REST 형태로 작업
 
         return new JSONData(items); // 위의 items 연동
     }
+
+    @GetMapping("/info/{seq}")
+    public JSONData get(Long seq) { // 개별 조회
+
+    }
 }
