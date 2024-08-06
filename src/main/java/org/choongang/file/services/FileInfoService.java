@@ -71,7 +71,10 @@ public class FileInfoService {
         }
 
         List<FileInfo> items = (List<FileInfo>)infoRepository.findAll(andBuilder, Sort.by(asc("createdAt")));
-        //파일 업도르 경로 | 접근 경로
+
+        // 2차 추가 데이터 철 (파일 업로드 경로 / 접근 경로)
+        items.forEach(this::addFileInfo);
+
         return null;
     } // status -> done => 메서드 오버로드 (다양한 유형 -> 편하게 쓰기 위하여 사용) ex) gid / gid, location 등
 
