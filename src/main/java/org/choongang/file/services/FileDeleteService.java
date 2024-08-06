@@ -9,6 +9,8 @@ import org.choongang.member.entities.Member;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
+import java.io.File;
+
 @Service
 @RequiredArgsConstructor // 파일 정보 가져오는 데 필요함!
 public class FileDeleteService {
@@ -27,7 +29,10 @@ public class FileDeleteService {
         }
 
         /* 파일 삭제 */
-
+        File file = new File(filePath);
+        if (file.exists()) { // 존재하는 지 체크
+            file.delete(); // 존재하면 파일 삭제 O
+        }
         /* 파일 정보 삭제 */
     }
 }
