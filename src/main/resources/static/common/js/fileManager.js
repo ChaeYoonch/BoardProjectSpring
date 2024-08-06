@@ -28,5 +28,12 @@ const fileManager = {
 };
 
 window.addEventListener("DOMContentLoaded", function () {
+    /* 파일 업로드 버튼 이벤트 처리 S */
+    const fileuploads = document.getElementsByClassName("fileuploads");
+    for (const el of fileuploads) {
+        el.addEventListener("click", function() {
 
+        });
+    }
+    /* 파일 업로드 버튼 이벤트 처리 E */
 });
