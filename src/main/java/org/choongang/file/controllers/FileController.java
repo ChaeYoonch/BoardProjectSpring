@@ -30,4 +30,9 @@ public class FileController { //REST 형태로 작업
 
         return ResponseEntity.status(status).body(data); // ** status 연동
     }
+
+    @GetMapping("/download/{seq}")
+    public void download(@PathVariable("seq") Long seq) { // 출력 = servletOutputStream 이 하므로 void
+
+    }
 }
