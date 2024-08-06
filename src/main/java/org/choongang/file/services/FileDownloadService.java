@@ -33,8 +33,8 @@ public class FileDownloadService {
             BufferedInputStream bis = new BufferedInputStream(fis)) {
 
             response.setHeader("Content-Disposition", "attachment; fileName=" + fileName);
-            response.setContentType(contentType);
-
+            response.setContentType(contentType); // 위의 contentType 연동
+            response.setIntHeader("Expires")
         } catch (IOException e) {
             e.printStackTrace();
         }
