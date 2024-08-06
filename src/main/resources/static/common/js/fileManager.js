@@ -37,8 +37,12 @@ window.addEventListener("DOMContentLoaded", function () {
     for (const el of fileuploads) {
         el.addEventListener("click", function() {
             fileEl.value = ""; // 값 초기화
+            delete fileEl.gid;
+            delete fileEl.location;
 
             const dataset = this.dataset;
+            fileEl.gid = dataset.gid;
+            if (dataset.location) fileEl.location = dataset.location;
 
             fileEl.click();
         });
@@ -48,6 +52,6 @@ window.addEventListener("DOMContentLoaded", function () {
     /* 파일 업로드 처리 */
     fileEl.addEventListener("change", function (e) {
         const files = e.target.files;
-        fileManager.upload(files, gid, location);
+        fileManager.upload(files, fileEl.gid, fileEl.location);
     });
 });
