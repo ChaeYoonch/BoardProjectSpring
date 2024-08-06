@@ -8,5 +8,11 @@ const fileManager = {
      */
     upload() {
 
-    }
+    },
+    /**
+     * 파일 삭제
+     */
+    delete() {
+
+    },
 }
