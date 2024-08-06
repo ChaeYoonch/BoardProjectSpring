@@ -62,4 +62,9 @@ public class FileController { //REST 형태로 작업
 
         return new JSONData(data);
     }
+
+    @GetMapping("/list/{gid}")
+    public JSONData getList() { // 목록 조회
+
+    }
 }
