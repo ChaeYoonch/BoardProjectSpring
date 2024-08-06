@@ -14,6 +14,7 @@ public class FileDeleteService {
     private final MemberUtil memberUtil; // 얘로 체크 가능!
 
     public FileInfo delete(Long seq) { // 낱개 삭제
+        FileInfo data = infoService.get(seq); // seq 를 가져옴
 
     }
 }
