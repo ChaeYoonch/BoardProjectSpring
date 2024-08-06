@@ -13,6 +13,11 @@
 
         <script th:src="@{/common/js/common.js}"></script> <!-- 모든 사이트 페이지 공통 -->
         <script th:src="@{/mobile/js/common.js}"></script> <!-- 모바일 페이지 공통 -->
+
+        <script th:if="${addCommonScript != null}" th:each="jsFile : ${addCommonScript}"
+                th:src="@{/common/js/{file}.js(file=${jsFile})}"></script>
+        <th:block layout:fragment="addCommonScript"></th:block> <!-- 공통으로 추가하는 모듈 : front & admin & mobile -->
+
         <script th:if="${addScript != null}" th:each="jsFile : ${addScript}"
                 th:src="@{/mobile/js/{file}.js(file=${jsFile})}"></script>
         <th:block layout:fragment="addScript"></th:block> <!-- controller 없이 연동하는 경우 fragment 로 연결 -->
