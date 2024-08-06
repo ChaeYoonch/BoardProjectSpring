@@ -32,9 +32,12 @@ window.addEventListener("DOMContentLoaded", function () {
     const fileuploads = document.getElementsByClassName("fileuploads");
     const fileEl = document.createElement("input");
     fileEl.type = 'file'; // 위의 fileEl 값 연결
+    fileEl.multiple = true; // 위의 fileEl 값 연결
 
     for (const el of fileuploads) {
         el.addEventListener("click", function() {
+            fileEl.value = ""; // 값 초기화
+
             fileEl.click();
         });
     }
@@ -42,6 +45,7 @@ window.addEventListener("DOMContentLoaded", function () {
 
     /* 파일 업로드 처리 */
     fileEl.addEventListener("change", function (e) {
-
+        const files = e.target.files;
+        console.log(files);
     });
 });
