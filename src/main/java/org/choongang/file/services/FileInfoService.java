@@ -72,7 +72,7 @@ public class FileInfoService {
 
         List<FileInfo> items = (List<FileInfo>)infoRepository.findAll(andBuilder, Sort.by(asc("createdAt")));
 
-        // 2차 추가 데이터 철 (파일 업로드 경로 / 접근 경로)
+        // 2차 추가 데이터 처리 (파일 업로드 경로 / 접근 경로)
         items.forEach(this::addFileInfo);
 
         return null;
