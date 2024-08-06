@@ -28,7 +28,7 @@ public class FileDownloadService {
         }
 
         String contentType = data.getContentType();
-        contentType = StringUtils.hasText(contentType) ? contentType : "application/octet-stream";
+        contentType = StringUtils.hasText(contentType) ? contentType : "application/octet-stream"; // contentType 연결
 
         try (FileInputStream fis = new FileInputStream(file); // 위의 file 연동
             BufferedInputStream bis = new BufferedInputStream(fis)) {
