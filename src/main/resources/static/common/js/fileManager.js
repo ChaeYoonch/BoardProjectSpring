@@ -35,7 +35,7 @@ window.addEventListener("DOMContentLoaded", function () {
 
     for (const el of fileuploads) {
         el.addEventListener("click", function() {
-
+            fileEl.click();
         });
     }
     /* 파일 업로드 버튼 이벤트 처리 E */
