@@ -50,7 +50,11 @@ public class FileDeleteService {
         return items;
     }
     
-    public List<FileInfo> delete(String gid, String location) {
+    public List<FileInfo> delete(String gid, String location) { // gid & location 사용
         return delete(gid, location, FileStatus.ALL);
+    }
+
+    public List<FileInfo> delete(String gid) { // gid 사용
+
     }
 }
