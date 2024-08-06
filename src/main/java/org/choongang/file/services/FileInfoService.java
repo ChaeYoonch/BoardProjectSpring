@@ -52,7 +52,7 @@ public class FileInfoService {
 
     public List<FileInfo> getList(String gid, String location, FileStatus status) { // gid - 그룹 ID 로 조회
         return null;
-    } // status -> done => 오버로드
+    } // status -> done => 메서드 오버로드 (다양한 유형 -> 편하게 쓰기 위하여 사용) ex) gid / gid, location 등
 
     public List<FileInfo> getList(String gid, String location) {
         return getList(gid, location, FileStatus.DONE); // status 로 확인
