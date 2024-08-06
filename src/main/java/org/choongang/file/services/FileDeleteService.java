@@ -3,6 +3,7 @@ package org.choongang.file.services;
 import lombok.RequiredArgsConstructor;
 import org.choongang.file.entities.FileInfo;
 import org.choongang.file.repositories.FileInfoRepository;
+import org.choongang.global.exceptions.UnAuthorizedException;
 import org.choongang.member.MemberUtil;
 import org.choongang.member.entities.Member;
 import org.springframework.stereotype.Service;
@@ -22,7 +23,7 @@ public class FileDeleteService {
 
         Member member = memberUtil.getMember(); // member 값 가져옴
         if (!memberUtil.isAdmin() && StringUtils.hasText(createdBy) && memberUtil.isLogin() && !member.getEmail().equals(createdBy)) { // equals 가 아닌 경우
-
+            throw new UnAuthorizedException(); // 권한 없음 예외 던짐!
         }
     }
 }
