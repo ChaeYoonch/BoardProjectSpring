@@ -18,4 +18,7 @@ const fileManager = {
     /**
      * 파일 조회
      */
+    search() {
+
+    }
 }
