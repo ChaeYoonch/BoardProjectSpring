@@ -37,6 +37,9 @@ public class FileDownloadService {
             response.setIntHeader("Expires", 0); // 만료 시간 X
             response.setHeader("Cache-Control", "must-revalidate");
             response.setContentLengthLong(file.length());
+
+            OutputStream out = response.getOutputStream();
+            out.write(bis.readAllBytes());
         } catch (IOException e) {
             e.printStackTrace();
         }
