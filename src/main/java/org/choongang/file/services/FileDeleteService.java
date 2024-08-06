@@ -25,5 +25,9 @@ public class FileDeleteService {
         if (!memberUtil.isAdmin() && StringUtils.hasText(createdBy) && memberUtil.isLogin() && !member.getEmail().equals(createdBy)) { // equals 가 아닌 경우
             throw new UnAuthorizedException(); // 권한 없음 예외 던짐!
         }
+
+        /* 파일 삭제 */
+
+        /* 파일 정보 삭제 */
     }
 }
