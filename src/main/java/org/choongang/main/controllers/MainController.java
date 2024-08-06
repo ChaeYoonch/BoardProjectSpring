@@ -17,6 +17,7 @@ public class MainController implements ExceptionProcessor { // 메인 페이지
 
         model.addAttribute("addCommonScript", List.of("fileManager"));
         model.addAttribute("addScript", List.of("test/form"));
+
         return "front/main/index"; // 주소 X | template 경로
     }
 }
