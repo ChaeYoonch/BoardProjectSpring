@@ -2,6 +2,9 @@ package org.choongang.file.controllers;
 
 import lombok.RequiredArgsConstructor;
 import org.choongang.file.entities.FileInfo;
+import org.choongang.file.services.FileDeleteService;
+import org.choongang.file.services.FileDownloadService;
+import org.choongang.file.services.FileInfoService;
 import org.choongang.file.services.FileUploadService;
 import org.choongang.global.rests.JSONData;
 import org.springframework.http.HttpStatus;
@@ -15,8 +18,11 @@ import java.util.List;
 @RequestMapping("/file")
 @RequiredArgsConstructor
 public class FileController { //REST 형태로 작업
-
+    // 파일 관련 의존성 주입
     private final FileUploadService uploadService;
+    private final FileDownloadService downloadService;
+    private final FileInfoService infoService;
+    private final FileDeleteService deleteService;
 
     @PostMapping("/upload") // file 은 post 형태로 넘어오기 때문!
     public ResponseEntity<JSONData> upload(@RequestPart("file") MultipartFile[] files, // "file" 이 이름 | 1개는 낱개로 | 여러 개는 배열 형태로
