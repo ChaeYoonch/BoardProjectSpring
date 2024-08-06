@@ -55,6 +55,6 @@ public class FileDeleteService {
     }
 
     public List<FileInfo> delete(String gid) { // gid 사용
-
+        return delete(gid, null);
     }
 }
