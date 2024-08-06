@@ -51,6 +51,6 @@ public class FileController { //REST 형태로 작업
 
     @DeleteMapping("/deletes/{gid}")
     public JSONData deletes(@PathVariable("gid")String gid, @RequestParam(name="location", required = false) String location) { // 목록 삭제
-
+        List<FileInfo> items = deleteService.delete(gid, location);
     }
 }
