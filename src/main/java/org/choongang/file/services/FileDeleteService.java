@@ -49,4 +49,8 @@ public class FileDeleteService {
 
         return items;
     }
+    
+    public List<FileInfo> delete(String gid, String location) {
+        return delete(gid, location, FileStatus.ALL);
+    }
 }
