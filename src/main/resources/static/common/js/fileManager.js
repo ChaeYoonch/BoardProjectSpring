@@ -8,7 +8,7 @@ const fileManager = {
      * 파일 업로드
      *
      */
-    upload() {
+    upload(files, gid, location) {
 
     },
     /**
