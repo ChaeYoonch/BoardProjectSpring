@@ -55,7 +55,7 @@ public class FileInfoService {
     } // status -> done => 오버로드
 
     public List<FileInfo> getList(String gid, String location) {
-
+        return getList(gid, location, FileStatus.DONE);
     }
 
     /**
