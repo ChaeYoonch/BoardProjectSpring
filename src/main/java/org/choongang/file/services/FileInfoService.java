@@ -50,7 +50,7 @@ public class FileInfoService {
      * @return
      */
 
-    public List<FileInfo> getList(String gid, String location, FileStatus status) {// gid - 그룹 ID 로 조회
+    public List<FileInfo> getList(String gid, String location, FileStatus status) { // gid - 그룹 ID 로 조회
         return null;
     }
 
