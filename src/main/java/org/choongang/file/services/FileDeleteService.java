@@ -43,7 +43,7 @@ public class FileDeleteService {
         return data; // 위의 * data 연결
     }
 
-    public List<FileInfo> delete(String gid, String loation, FileStatus status) {
+    public List<FileInfo> delete(String gid, String loation, FileStatus status) { // 매개변수 : gid, location, status 3개
 
     }
 }
