@@ -26,3 +26,7 @@ const fileManager = {
 
     }
 };
+
+window.addEventListener("DOMContentLoaded", function () {
+
+});
