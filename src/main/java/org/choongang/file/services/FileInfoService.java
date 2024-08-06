@@ -63,7 +63,7 @@ public class FileInfoService {
             andBuilder.and(fileInfo.location.eq(location)); // location 확인 조건식
         }
 
-        if (status != FileStatus.ALL) {
+        if (status != FileStatus.ALL) { // All 이 아닌 경우에는 체크 X
             andBuilder.and(fileInfo.done.eq(status == FileStatus.DONE)); // status 확인 조건식
         }
 
