@@ -11,6 +11,7 @@ import org.choongang.file.repositories.FileInfoRepository;
 import org.choongang.global.configs.FileProperties;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.stereotype.Service;
+import org.springframework.util.StringUtils;
 
 import java.util.List;
 import java.util.Objects;
@@ -57,6 +58,10 @@ public class FileInfoService {
         QFileInfo fileInfo = QFileInfo.fileInfo;
         BooleanBuilder andBuilder = new BooleanBuilder();
         andBuilder.and(fileInfo.gid.eq(gid));
+
+        if (StringUtils.hasText(location)) {
+            andBuilder.and(fileInfo.location.eq(location));
+        }
 
         return null;
     } // status -> done => 메서드 오버로드 (다양한 유형 -> 편하게 쓰기 위하여 사용) ex) gid / gid, location 등
