@@ -19,7 +19,7 @@ public class FileDeleteService {
     private final MemberUtil memberUtil; // 얘로 체크 가능!
 
     public FileInfo delete(Long seq) { // 낱개 삭제
-        FileInfo data = infoService.get(seq); // seq 를 가져옴
+        FileInfo data = infoService.get(seq); // seq 를 가져옴 | **
         String filePath = data.getFilePath(); // 위의 data 연동 -> 가져온 seq 연결 O
         String createdBy = data.getCreatedBy(); // 위의 data 연동 -> 업로드한 회원 이메일
 
@@ -35,5 +35,9 @@ public class FileDeleteService {
         }
 
         /* 파일 정보 삭제 */
+        infoRepository.delete(data); // 위의 ** 쪽의 data 가져옴 | *
+        infoRepository.flush();
+
+        return data; // 위의 * data 연결
     }
 }
