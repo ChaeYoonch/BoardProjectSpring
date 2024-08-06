@@ -43,7 +43,9 @@ public class FileController { //REST 형태로 작업
     }
 
     @DeleteMapping("/delete/{seq}")
-    public void delete(@PathVariable("seq") Long seq) { // 낱개 삭제
+    public JSONData delete(@PathVariable("seq") Long seq) { // 낱개 삭제
+        FileInfo data = deleteService.delete(seq);
 
-    }
+        return new JSONData(data); // 위의 data 연결 | JSON 데이터 형태
+    } // 반환값 = 삭제된 데이터
 }
