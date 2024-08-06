@@ -41,4 +41,7 @@ public class FileController { //REST 형태로 작업
     public void download(@PathVariable("seq") Long seq) { // 출력 = servletOutputStream 이 하므로 void
         downloadService.download(seq); // Long seq 의 seq 연동
     }
+
+    @DeleteMapping("/delete/{seq}")
+    public void delete()
 }
