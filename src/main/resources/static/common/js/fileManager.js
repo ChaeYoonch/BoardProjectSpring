@@ -39,4 +39,9 @@ window.addEventListener("DOMContentLoaded", function () {
         });
     }
     /* 파일 업로드 버튼 이벤트 처리 E */
+
+    /* 파일 업로드 처리 */
+    fileEl.addEventListener("change", function (e) {
+
+    });
 });
