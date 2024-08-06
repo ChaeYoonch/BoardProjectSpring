@@ -50,7 +50,7 @@ public class FileController { //REST 형태로 작업
     } // 반환값 = 삭제된 데이터
 
     @DeleteMapping("/deletes/{gid}")
-    public JSONData deletes(String gid, String location) { // 목록 삭제
+    public JSONData deletes(@PathVariable("gid")String gid, @RequestParam(name="location", required = false) String location) { // 목록 삭제
 
     }
 }
