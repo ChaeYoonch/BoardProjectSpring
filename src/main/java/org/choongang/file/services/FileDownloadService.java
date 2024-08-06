@@ -34,7 +34,9 @@ public class FileDownloadService {
 
             response.setHeader("Content-Disposition", "attachment; fileName=" + fileName);
             response.setContentType(contentType); // 위의 contentType 연동
-            response.setIntHeader("Expires")
+            response.setIntHeader("Expires", 0); // 만료 시간 X
+            response.setHeader("Cache-Control", "must-revalidate");
+            response.setContentLengthLong(file.length());
         } catch (IOException e) {
             e.printStackTrace();
         }
