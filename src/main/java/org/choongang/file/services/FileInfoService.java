@@ -10,11 +10,14 @@ import org.choongang.file.exceptions.FileNotFoundException;
 import org.choongang.file.repositories.FileInfoRepository;
 import org.choongang.global.configs.FileProperties;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
 import java.util.List;
 import java.util.Objects;
+
+import static org.springframework.data.domain.Sort.Order.asc;
 
 @Service
 @RequiredArgsConstructor
@@ -66,6 +69,8 @@ public class FileInfoService {
         if (status != FileStatus.ALL) { // All 이 아닌 경우에는 체크 X
             andBuilder.and(fileInfo.done.eq(status == FileStatus.DONE)); // status 확인 조건식
         }
+
+        List<FileInfo> items = (List<FileInfo>)infoRepository.findAll(andBuilder, Sort.by(asc("createdAt")));
 
         return null;
     } // status -> done => 메서드 오버로드 (다양한 유형 -> 편하게 쓰기 위하여 사용) ex) gid / gid, location 등
