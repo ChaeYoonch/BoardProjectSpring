@@ -13,5 +13,7 @@ public class FileDownloadService {
 
     public void download(Long seq) {
         FileInfo data = infoService.get(seq); // 위의 seq 연동
+
+        String filePath = data.getFilePath(); // 위의 data 연결 -> 2차 가공
     }
 }
