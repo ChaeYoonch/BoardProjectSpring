@@ -45,7 +45,7 @@ public class FileDeleteService {
 
     public List<FileInfo> delete(String gid, String loation, FileStatus status) { // 매개변수 : gid, location, status 3개
         List<FileInfo> items = infoService.getList(gid, loation, status);
-
+        items.forEach(i -> delete(i.getSeq()));
         return items;
     }
 }
