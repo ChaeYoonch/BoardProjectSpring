@@ -55,7 +55,11 @@ public class FileInfoService {
     } // status -> done => 오버로드
 
     public List<FileInfo> getList(String gid, String location) {
-        return getList(gid, location, FileStatus.DONE);
+        return getList(gid, location, FileStatus.DONE); // status 로 확인
+    }
+
+    public List<FileInfo> getList(String gid) {
+        return getList(gid, null, FileStatus.DONE); // gid 로 확인
     }
 
     /**
