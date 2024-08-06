@@ -15,4 +15,7 @@ const fileManager = {
     delete() {
 
     },
+    /**
+     * 파일 조회
+     */
 }
