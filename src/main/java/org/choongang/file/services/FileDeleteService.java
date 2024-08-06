@@ -1,6 +1,7 @@
 package org.choongang.file.services;
 
 import lombok.RequiredArgsConstructor;
+import org.choongang.file.constants.FileStatus;
 import org.choongang.file.entities.FileInfo;
 import org.choongang.file.repositories.FileInfoRepository;
 import org.choongang.global.exceptions.UnAuthorizedException;
@@ -10,6 +11,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
 import java.io.File;
+import java.util.List;
 
 @Service
 @RequiredArgsConstructor // 파일 정보 가져오는 데 필요함!
@@ -39,5 +41,9 @@ public class FileDeleteService {
         infoRepository.flush();
 
         return data; // 위의 * data 연결
+    }
+
+    public List<FileInfo> delete(String gid, String loation, FileStatus status) {
+
     }
 }
