@@ -57,10 +57,14 @@ public class FileInfoService {
 
         QFileInfo fileInfo = QFileInfo.fileInfo;
         BooleanBuilder andBuilder = new BooleanBuilder();
-        andBuilder.and(fileInfo.gid.eq(gid)); // gid 확인
+        andBuilder.and(fileInfo.gid.eq(gid)); // gid 확인 조건식
 
         if (StringUtils.hasText(location)) {
-            andBuilder.and(fileInfo.location.eq(location)); // location 확인
+            andBuilder.and(fileInfo.location.eq(location)); // location 확인 조건식
+        }
+
+        if (status != FileStatus.ALL) {
+            andBuilder.and(fileInfo.done.eq(status == FileStatus.DONE)); // status 확인 조건식
         }
 
         return null;
