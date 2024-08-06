@@ -57,7 +57,9 @@ public class FileController { //REST 형태로 작업
     }
 
     @GetMapping("/info/{seq}")
-    public JSONData get(Long seq) { // 개별 조회
+    public JSONData get(@PathVariable("seq") Long seq) { // 파일 등록 번호 1개로 개별 조회
+        FileInfo data = infoService.get(seq);
 
+        return new JSONData(data);
     }
 }
