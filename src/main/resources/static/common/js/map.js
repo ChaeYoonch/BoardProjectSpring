@@ -19,7 +19,7 @@ const mapLib = {
         const position = new kakao.maps.LatLng(center.lat, center.lng);
         const map = new kakao.maps.Map(mapEl, {
             center: position,
-            level: zoom
+            level: zoom,
         });
         /* 지도 가운데 좌표 처리 E */
      }
