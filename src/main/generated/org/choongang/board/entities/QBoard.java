@@ -8,6 +8,7 @@ import com.querydsl.core.types.PathMetadata;
 import javax.annotation.processing.Generated;
 import com.querydsl.core.types.Path;
 
+
 /**
  * QBoard is a Querydsl query type for Board
  */
@@ -52,3 +53,4 @@ public class QBoard extends EntityPathBase<Board> {
     }
 
 }
+

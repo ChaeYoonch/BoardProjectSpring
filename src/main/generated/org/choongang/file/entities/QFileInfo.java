@@ -8,6 +8,7 @@ import com.querydsl.core.types.PathMetadata;
 import javax.annotation.processing.Generated;
 import com.querydsl.core.types.Path;
 
+
 /**
  * QFileInfo is a Querydsl query type for FileInfo
  */
@@ -60,4 +61,6 @@ public class QFileInfo extends EntityPathBase<FileInfo> {
     public QFileInfo(PathMetadata metadata) {
         super(FileInfo.class, metadata);
     }
+
 }
+

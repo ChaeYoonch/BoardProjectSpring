@@ -8,6 +8,7 @@ import com.querydsl.core.types.PathMetadata;
 import javax.annotation.processing.Generated;
 import com.querydsl.core.types.Path;
 
+
 /**
  * QBaseMemberEntity is a Querydsl query type for BaseMemberEntity
  */
@@ -46,3 +47,4 @@ public class QBaseMemberEntity extends EntityPathBase<BaseMemberEntity> {
     }
 
 }
+

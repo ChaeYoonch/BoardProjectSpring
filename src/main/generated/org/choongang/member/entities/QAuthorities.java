@@ -9,6 +9,7 @@ import javax.annotation.processing.Generated;
 import com.querydsl.core.types.Path;
 import com.querydsl.core.types.dsl.PathInits;
 
+
 /**
  * QAuthorities is a Querydsl query type for Authorities
  */
@@ -47,3 +48,4 @@ public class QAuthorities extends EntityPathBase<Authorities> {
     }
 
 }
+
