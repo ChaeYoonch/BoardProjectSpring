@@ -24,6 +24,7 @@ const commonLib = {
             method
         };
 
-        if (data)
+        if (data) options.body = data;
+        if (headers)
     }
 };
