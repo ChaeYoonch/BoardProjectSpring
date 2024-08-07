@@ -36,9 +36,11 @@ const commonLib = {
         if (data) options.body = data;
         if (headers) options.headers = headers;
 
-        fetch(url, options)
-            .then(res => res.json) // res.json() : json 형태 | res.text() : text 형태
-            .then(res => console.log(res))
-            .catch(err => console.log(err));
+        return new Promise((resolve, reject) => {
+            fetch(url, options)
+                .then(res => res.json) // res.json() : json 형태 | res.text() : text 형태
+                .then(res => console.log(res))
+                .catch(err => console.log(err));
+        });
     }
 };
