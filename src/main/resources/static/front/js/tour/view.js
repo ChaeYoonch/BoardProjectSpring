@@ -20,4 +20,4 @@ window.addEventListener("DOMContentLoaded", function() {
 
         marker.setMap(map); // 마커 표기 -> IP 기반이므로 정확하지는 않음
     });
-})
+});
