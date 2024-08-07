@@ -10,7 +10,8 @@ const fileManager = {
         try {
 
         } catch (e) {
-
+            console.log(e);
+            alert()
         }
     },
     /**
