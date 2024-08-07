@@ -15,7 +15,7 @@ const commonLib = {
         const csrfHeader = document.querySelector("mata[name='csrf_header']")?.content?.trim(); // ? -> nullsafe
         const rootUrl = document.querySelector("mata[name='rootUrl']")?.content?.trim() ?? ''; // ? -> nullsafe
 
-        url = rootUrl + url;
+        url = location.protocol + "://" + location.host + rootUrl + url;
 
         method = method.toUpperCase();
         if (method === 'GET') {
