@@ -47,7 +47,7 @@ window.addEventListener("DOMContentLoaded", function () {
 
     /* 파일 업로드 처리 */
     fileEl.addEventListener("change", function (e) {
-        const files = e.target.files;
+        const files = e.target.files; // 아래의 gid, location 값을 가져옴
         fileManager.upload(files, fileEl.gid, fileEl.location);
     });
 });
