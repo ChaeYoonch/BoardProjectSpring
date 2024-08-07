@@ -32,6 +32,9 @@ window.addEventListener("DOMContentLoaded", function() {
     } // endif */
 
     function  mapProcess(map) {
-
+        // 지도 클릭 시 좌표 정보
+        kakao.maps.event.addListener(map, 'click', function (e) {
+            console.log(e);
+        });
     }
 });
