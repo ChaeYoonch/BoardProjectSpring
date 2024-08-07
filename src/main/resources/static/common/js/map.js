@@ -19,7 +19,7 @@ const mapLib = {
         const position = new kakao.maps.LatLng(center.lat, center.lng); // 위도, 경도 값 설정
         const map = new kakao.maps.Map(mapEl, {
             center: position, // 가운데 좌표 설정
-            level: zoom,
+            level: zoom, // 확대 레벨 -> 숫자가 작을수록 가까이 보임
         });
         /* 지도 가운데 좌표 처리 E */
      }
