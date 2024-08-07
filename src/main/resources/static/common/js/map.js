@@ -39,7 +39,8 @@ const mapLib = {
                 /* 마커 이미지 처리 */
                 const mi = markerImage ? markerImage : m.image;
                 if (mi) {
-                    const mImage = new kakao.maps.MarkerImage(mi, new kakao.maps.Size(64, 69), { offset })
+                    const mImage = new kakao.maps.MarkerImage(mi, new kakao.maps.Size(64, 69), { offset: new kakao.maps.Point(27, 69)});
+                    opt.image= mImage;
                 }
 
                 const _marker = new kakao.maps.Marker({
