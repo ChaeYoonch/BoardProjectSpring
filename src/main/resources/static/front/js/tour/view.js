@@ -13,7 +13,7 @@ window.addEventListener("DOMContentLoaded", function() {
             level: 3,
         };
 
-        map = new kakao.maps.Map(mapEl, mapOption); // map 객체 생성
+        map = new kakao.maps.Map(mapEl, mapOption);
 
         const markerPos = new kakao.maps.LatLng(latitude, longitude); // 좌표
         const marker = new kakao.maps.Marker({
@@ -29,4 +29,8 @@ window.addEventListener("DOMContentLoaded", function() {
             console.log(e);
         });
     } // endif
+
+    function  mapProcess(map) {
+
+    }
 });
