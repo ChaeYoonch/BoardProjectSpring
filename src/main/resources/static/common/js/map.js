@@ -12,5 +12,7 @@ const mapLib = {
 
             mapEl.style.width = `${width}px`;
             mapEl.style.height = `${height}px`;
+
+            // 지도 가운데 좌표 처리
      }
 };
