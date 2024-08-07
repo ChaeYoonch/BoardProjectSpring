@@ -14,7 +14,11 @@ const mapLib = {
             mapEl.style.height = `${height}px`;
 
         /* 지도 가운데 좌표 처리 S */
-        const position = new kakao.maps.LatLng()
+        const { center } = options;
+        const position = new kakao.maps.LatLng(center.lat, center.lng);
+        const map = new kakao.maps.Map(mapEl, {
+            center: position,
+        })
         /* 지도 가운데 좌표 처리 E */
      }
 };
