@@ -1,6 +1,7 @@
 const items = [
     [126.94062742683245, 37.557756188912954], // 경도, 위도
-    [126.94120499658828, 37.557287959390024]
+    [126.94120499658828, 37.557287959390024],
+    [126.94069261563956, 37.561184514897825]
 ];
 
 window.addEventListener("DOMContentLoaded", function() {
@@ -19,7 +20,17 @@ window.addEventListener("DOMContentLoaded", function() {
 
     markers.forEach(marker => marker.setMap(map));
 
+        marker.setMap(map);
+
     const iwContent = '<h1>정보!</h1>';
+    const iwPos = new kakao.maps.LatLng(items[0][1] + 0.02, items[0][0]);
+
+    const infoWindow = new kakao.maps.InfoWindow({
+        position: iwPos,
+        content: iwContent
+    });
+
+    infoWindow.open(map, markers[0]);
 
     const removeEls = document.getElementsByClassName("remove");
     for (let i = 0; i < removeEls.length; i++) {
