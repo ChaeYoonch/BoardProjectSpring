@@ -8,7 +8,9 @@ const fileManager = {
      */
     upload(files, gid, location) { // location = 그룹 안의 위치 값
         try {
+            if (!files || files.length == 0) {
 
+            }
         } catch (e) {
             console.log(e);
             alert(e.message);
