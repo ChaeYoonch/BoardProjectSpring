@@ -11,7 +11,6 @@ const fileManager = {
     },
     /**
      * 파일 삭제
-     *
      */
     delete() {
 
