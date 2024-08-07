@@ -12,5 +12,7 @@ window.addEventListener("DOMContentLoaded", function() {
         };
 
         const map = new kakao.maps.Map(mapEl, mapOption);
+
+        const markerPos = new kakao.maps.LatLng()
     });
 })
