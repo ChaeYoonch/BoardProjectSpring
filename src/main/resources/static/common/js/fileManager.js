@@ -35,6 +35,8 @@ const fileManager = {
                         alert(res.message);
                         return;
                     }
+
+                    if (typeof )
                 })
                 .catch(err => alert(err.message));
 
