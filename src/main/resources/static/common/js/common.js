@@ -13,7 +13,8 @@ const commonLib = {
 
         const csrfToken = document.querySelector("mata[name='csrf_token']")?.content?.trim(); // trim() 으로 공백 제거
         const csrfHeader = document.querySelector("mata[name='csrf_header']")?.content?.trim(); // ? -> nullsafe
-        const rootUrl = document.querySelector("mata[name='rootUrl']")?.content?.trim() ?? ''; // ? -> nullsafe
+        let rootUrl = document.querySelector("mata[name='rootUrl']")?.content?.trim() ?? ''; // ? -> nullsafe
+        rootUrl = rootUrl === '/' ? '' : rootUrl;
 
         url = location.protocol + "://" + location.host + rootUrl + url;
 
@@ -39,6 +40,7 @@ const commonLib = {
         if (headers) options.headers = headers;
 
         fetch(url, options)
+            .then(res => res.json) // res.json() : json 형태 | res.text() : text 형태
             .then(res => console.log(res))
             .catch(err => console.log(err));
     }
