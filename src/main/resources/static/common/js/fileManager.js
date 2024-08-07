@@ -32,7 +32,7 @@ const fileManager = {
             ajaxLoad('/file/upload', 'POST', formData)
                 .then(res => {
                     if (!res.success) {
-
+                        alert(res.message);
                     }
                 })
                 .catch(err => alert(err.message));
