@@ -34,8 +34,10 @@ const mapLib = {
 
             const markers = marker.map(m => {
                 const _marker = new kakao.maps.Marker({
-                    position: new kakao.maps.LatLng()
-                })
+                    position: new kakao.maps.LatLng(m.lat, m.lng),
+                });
+
+                _marker.setMap(map);
             });
         } // endif
         /* 마커 출력 처리 E */
