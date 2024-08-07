@@ -1,5 +1,5 @@
 const items = [
-    [126.94062742683245, 37.557756188912954],
+    [126.94062742683245, 37.557756188912954], // 경도, 위도
     [126.94120499658828, 37.557287959390024]
 ];
 
@@ -8,8 +8,7 @@ window.addEventListener("DOMContentLoaded", function() {
     mapEl.style.width = "1000px";
     mapEl.style.height = "600px";
 
-    const markers = [];
-
+    const markers = items.map(pos => new kakao.maps.LatLng(pos[1], pos[0]));
 
     /*
     let map;
