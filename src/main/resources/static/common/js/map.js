@@ -34,8 +34,13 @@ const mapLib = {
 
             const markers = marker.map(m => {
 
+                const opt = { position: new kakao.maps.LatLng(m.lat, m.lng)};
+
                 /* 마커 이미지 처리 */
                 const mi = markerImage ? markerImage : m.image;
+                if (mi) {
+                    const mImage = new kakao.maps.MarkerImage(mi, new kakao.maps.Size(64, 69), { offset })
+                }
 
                 const _marker = new kakao.maps.Marker({
                     position: new kakao.maps.LatLng(m.lat, m.lng),
