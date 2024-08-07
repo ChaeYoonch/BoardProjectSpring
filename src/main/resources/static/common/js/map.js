@@ -7,5 +7,8 @@ const mapLib = {
      */
      load(mapId, width= 300, height= 300) {
             const mapEl = document.getElementById(mapId);
+            if (!mapEl) return;
+
+            mapEl.style.width = `${width}px`;
      }
 };
