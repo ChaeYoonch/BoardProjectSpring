@@ -8,7 +8,7 @@ const fileManager = {
      */
     upload(files, gid, location) { // location = 그룹 안의 위치 값
         try {
-            if (!files || files.length == 0) {
+            if (!files || files.length == 0) { // 파일이 없는 경우
                 throw new Error("파일을 선택 하세요.");
             }
         } catch (e) {
