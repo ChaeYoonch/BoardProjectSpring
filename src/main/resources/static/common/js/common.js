@@ -25,6 +25,8 @@ const commonLib = {
         };
 
         if (data) options.body = data;
-        if (headers)
+        if (headers) options.headers = headers;
+
+        fetch(url, options)
     }
 };
