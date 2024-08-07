@@ -15,6 +15,9 @@ const fileManager = {
             if (!gid || !gid.trim()) { // gid 가 없는 경우
                 throw new Error("필수 항목 누락 입니다(gid).");
             }
+
+            const formData = new FormData();
+
         } catch (e) {
             console.log(e);
             alert(e.message);
