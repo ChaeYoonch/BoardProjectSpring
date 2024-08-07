@@ -33,7 +33,9 @@ const mapLib = {
             if(!Array.isArray(marker)) marker = [marker];
 
             const markers = marker.map(m => {
-
+                const _marker = new kakao.maps.Marker({
+                    position: new kakao.maps.LatLng()
+                })
             });
         } // endif
         /* 마커 출력 처리 E */
