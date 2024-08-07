@@ -30,7 +30,9 @@ const mapLib = {
 
         /* 마커 출력 처리 S */
         if (marker) {
+            if(!Array.isArray(marker)) {
 
+            }
         } // endif
         /* 마커 출력 처리 E */
      }
