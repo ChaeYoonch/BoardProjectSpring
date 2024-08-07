@@ -13,6 +13,7 @@ const commonLib = {
 
         const csrfToken = document.querySelector("mata[name='csrf_token']")?.content?.trim(); // trim() 으로 공백 제거
         const csrfHeader = document.querySelector("mata[name='csrf_header']")?.content?.trim(); // ? -> nullsafe
+        const rootUrl = document.querySelector("mata[name='rootUrl']")?.content?.trim() ?? ''; // ? -> nullsafe
 
         method = method.toUpperCase();
         if (method === 'GET') {
