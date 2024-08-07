@@ -22,7 +22,7 @@ window.addEventListener("DOMContentLoaded", function() {
     const removeEls = document.getElementsByClassName("remove");
     for (let i = 0; i < removeEls.length; i++) {
         removeEls[i].addEventListener("click", function () {
-
+            markers[i].setMap(null);
         });
     }
 
