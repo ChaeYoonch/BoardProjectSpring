@@ -10,7 +10,7 @@ window.addEventListener("DOMContentLoaded", function() {
             {lat: 37.561184514897825, lng: 126.94069261563956},
         ],
     };
-    mapLib
+    mapLib.load("map1", 1000, 600, options);
     /*
     mapLib.load("map1", 300, 300, options);
     mapLib.load("map2", 400, 400, options);
