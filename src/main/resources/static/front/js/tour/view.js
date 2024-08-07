@@ -24,4 +24,7 @@ window.addEventListener("DOMContentLoaded", function() {
     });
 
     // 지도 클릭 시 좌표 정보
+    if (map) {
+
+    }
 });
