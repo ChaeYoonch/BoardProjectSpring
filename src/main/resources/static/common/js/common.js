@@ -15,5 +15,9 @@ const commonLib = {
         if (method === 'GET') {
             data = null;
         }
+
+        if (!(data instanceof FormData) && typeof data !== 'string' && data instanceof Object) {
+
+        }
     }
 };
