@@ -5,7 +5,7 @@ const mapLib = {
      * @param width : 지도_너비
      * @param height : 지도_높이
      */
-        load(mapId, width, height) {
-
-        }
+     load(mapId, width= 300, height= 300) {
+            const mapEl = document.getElementById(mapId);
+     }
 };
