@@ -8,7 +8,12 @@ window.addEventListener("DOMContentLoaded", function() {
     mapEl.style.width = "1000px";
     mapEl.style.height = "600px";
 
+    const map = new kakao.maps.Map(mapEl, {
+
+    }); // map 객체 생성
     const markers = items.map(pos => new kakao.maps.LatLng(pos[1], pos[0]));
+
+    markers.forEach(marker => marker.setMap(map));
 
     /*
     let map;
