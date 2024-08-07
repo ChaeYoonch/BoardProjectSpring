@@ -26,6 +26,10 @@ const commonLib = {
             data = JSON.stringify(data);
         }
 
+        if (csrfHeader && csrfToken) {
+            headers = headers ?? {};
+        }
+
         const options = {
             method
         };
