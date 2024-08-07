@@ -12,7 +12,10 @@ window.addEventListener("DOMContentLoaded", function() {
         center: new kakao.maps.LatLng(items[0][1], items[0][0]),
         level: 3,
     }); // map 객체 생성
-    const markers = items.map(pos => new kakao.maps.LatLng(pos[1], pos[0]));
+    const markers = items.map(pos => {
+        const position = new kakao.maps.LatLng(pos[1], pos[0]);
+        return new kakao.maps.Marker({position});
+    });
 
     markers.forEach(marker => marker.setMap(map));
 
