@@ -5,5 +5,12 @@ window.addEventListener("DOMContentLoaded", function() {
 
     navigator.geolocation.getCurrentPosition((pos) => {
         const { latitude, longitude } = pos.coords;
+
+        const mapOption = {
+            center: new kakao.maps.LatLng(latitude, longitude),
+            level: 3,
+        };
+
+        const map = new kakao.maps.Map(mapEl, mapOption);
     });
 })
