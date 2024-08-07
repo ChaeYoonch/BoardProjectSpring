@@ -30,7 +30,11 @@ const fileManager = {
             const { ajaxLoad } = commonLib; // 비구조 할당
 
             ajaxLoad('/file/upload', 'POST', formData)
-                .then(res => console.log(res))
+                .then(res => {
+                    if (!res.success) {
+
+                    }
+                })
                 .catch(err => alert(err.message));
 
         } catch (e) {
