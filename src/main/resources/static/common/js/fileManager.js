@@ -7,7 +7,11 @@ const fileManager = {
      * 파일 업로드
      */
     upload(files, gid, location) { // location = 그룹 안의 위치 값
+        try {
 
+        } catch (e) {
+
+        }
     },
     /**
      * 파일 삭제
