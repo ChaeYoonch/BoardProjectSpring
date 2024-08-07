@@ -8,6 +8,9 @@ window.addEventListener("DOMContentLoaded", function() {
     mapEl.style.width = "1000px";
     mapEl.style.height = "600px";
 
+
+
+    /*
     let map;
 
     navigator.geolocation.getCurrentPosition((pos) => {
@@ -39,5 +42,5 @@ window.addEventListener("DOMContentLoaded", function() {
 
             marker.setMap(map);
         });
-    }
+    } */
 });
