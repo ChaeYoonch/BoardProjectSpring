@@ -39,8 +39,8 @@ const commonLib = {
         return new Promise((resolve, reject) => {
             fetch(url, options)
                 .then(res => responseType === 'text' ? res.text() : res.json()) // res.json() : json 형태 | res.text() : text 형태 | text 일 때는 text 로 그 외에는 json 형태로 나오도록
-                .then(res => console.log(res))
-                .catch(err => console.log(err));
+                .then(data => resolve(data))
+                .catch(err => reject(err));
         });
     }
 };
