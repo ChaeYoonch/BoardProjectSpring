@@ -29,6 +29,8 @@ const fileManager = {
 
             const { ajaxLoad } = commonLib; // 비구조 할당
 
+            ajaxLoad('/file/upload', 'POST', formData);
+
         } catch (e) {
             console.log(e);
             alert(e.message);
