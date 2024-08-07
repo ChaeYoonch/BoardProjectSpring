@@ -33,6 +33,7 @@ const fileManager = {
                 .then(res => {
                     if (!res.success) {
                         alert(res.message);
+                        return;
                     }
                 })
                 .catch(err => alert(err.message));
