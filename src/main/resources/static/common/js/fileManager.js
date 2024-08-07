@@ -36,7 +36,9 @@ const fileManager = {
                         return;
                     }
 
-                    if (typeof )
+                    if (typeof parent.fileUploadCallback === 'function') {
+
+                    }
                 })
                 .catch(err => alert(err.message));
 
