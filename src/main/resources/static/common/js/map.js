@@ -38,6 +38,8 @@ const mapLib = {
                 });
 
                 _marker.setMap(map);
+
+                return _marker;
             });
         } // endif
         /* 마커 출력 처리 E */
