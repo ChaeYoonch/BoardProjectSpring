@@ -29,7 +29,9 @@ const mapLib = {
         /* 지도 가운데 좌표 처리 E */
 
         /* 마커 출력 처리 S */
+        if (marker) {
 
+        } // endif
         /* 마커 출력 처리 E */
      }
 };
