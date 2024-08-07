@@ -11,6 +11,8 @@ const commonLib = {
             return;
         }
 
+        const csrfToken = document.querySelector("mata[name='csrf_token']").content.trim(); // trim() 으로 공백 제거
+
         method = method.toUpperCase();
         if (method === 'GET') {
             data = null;
@@ -29,6 +31,6 @@ const commonLib = {
 
         fetch(url, options)
             .then(res => console.log(res))
-
+            .catch()
     }
 };
