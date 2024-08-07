@@ -28,5 +28,7 @@ const commonLib = {
         if (headers) options.headers = headers;
 
         fetch(url, options)
+            .then(res => console.log(res))
+
     }
 };
