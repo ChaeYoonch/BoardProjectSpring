@@ -13,7 +13,7 @@ const commonLib = {
 
         method = method.toUpperCase();
         if (method === 'GET') {
-
+            data = null;
         }
     }
 };
