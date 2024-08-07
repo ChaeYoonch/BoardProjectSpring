@@ -4,6 +4,7 @@
         <meta charset="UTF-8">
         <meta name="csrf_token" th:content="${_csrf.token}">
         <meta name="csrf_token" th:content="${_csrf.headerName}">
+        <meta name="rootUrl" th:content="@{/}" />
         <title>
             <th:block th:if="${pageTitle != null}" th:text="${#strings.concat(pageTitle, ' - ')}"></th:block> 사이트 제목
         </title>
