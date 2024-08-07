@@ -28,5 +28,5 @@ window.addEventListener("DOMContentLoaded", function() {
         kakao.maps.event.addListener(map, 'click', function (e) {
             console.log(e);
         });
-    }
+    } // endif
 });
