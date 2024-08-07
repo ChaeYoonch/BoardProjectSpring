@@ -37,7 +37,7 @@ window.addEventListener("DOMContentLoaded", function () {
             delete fileEl.location;
 
             const dataset = this.dataset;
-            fileEl.gid = dataset.gid;
+            fileEl.gid = dataset.gid; // gid & location 은 변할 수 있는 값
             if (dataset.location) fileEl.location = dataset.location;
 
             fileEl.click();
