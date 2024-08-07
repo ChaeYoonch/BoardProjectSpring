@@ -35,9 +35,9 @@ const fileManager = {
                         alert(res.message);
                         return;
                     }
-
+                    // 파일 업로드 후 처리는 다양, fileUploadCallback 을 직접 상황에 맞게 정의 처리
                     if (typeof parent.fileUploadCallback === 'function') {
-
+                        parent.fileUploadCallback(res.data);
                     }
                 })
                 .catch(err => alert(err.message));
