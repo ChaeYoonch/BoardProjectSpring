@@ -5,7 +5,6 @@
 const fileManager = {
     /**
      * 파일 업로드
-     *
      */
     upload(files, gid, location) {
 
