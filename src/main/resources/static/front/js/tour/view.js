@@ -19,6 +19,8 @@ window.addEventListener("DOMContentLoaded", function() {
 
     markers.forEach(marker => marker.setMap(map));
 
+    const iwContent = '<h1>정보!</h1>';
+
     const removeEls = document.getElementsByClassName("remove");
     for (let i = 0; i < removeEls.length; i++) {
         removeEls[i].addEventListener("click", function () {
