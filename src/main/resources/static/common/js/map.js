@@ -17,7 +17,7 @@ const mapLib = {
             mapEl.style.width = `${width}px`;
             mapEl.style.height = `${height}px`;
 
-        const { center, marker } = options;
+        let { center, marker } = options;
 
         /* 지도 가운데 좌표 처리 S */
         const zoom = options?.zoom ?? 3; // 기본값 = 3 | optional chaing 옵셔널 체이닝 연산자
