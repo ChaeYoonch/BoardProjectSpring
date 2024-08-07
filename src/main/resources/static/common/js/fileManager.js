@@ -11,6 +11,10 @@ const fileManager = {
             if (!files || files.length == 0) { // 파일이 없는 경우
                 throw new Error("파일을 선택 하세요.");
             }
+
+            if (!gid || !gid.trim()) { // gid 가 없는 경우
+
+            }
         } catch (e) {
             console.log(e);
             alert(e.message);
