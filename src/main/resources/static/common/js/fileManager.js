@@ -17,11 +17,13 @@ const fileManager = {
             }
 
             const formData = new FormData();
-            formData.append("gid", gid);
+            formData.append("gid", gid.trim());
 
             for (const file of files) {
                 formData.append("file", file);
             }
+
+            if ()
 
         } catch (e) {
             console.log(e);
