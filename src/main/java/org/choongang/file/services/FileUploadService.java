@@ -74,6 +74,8 @@ public class FileUploadService {
             }
         }
 
+        uploadedFiles.forEach(fileInfoService::addFileInfo);
+
         return uploadedFiles; // 성공한 파일만 모아 반환값을 파일로!
     }
 }
