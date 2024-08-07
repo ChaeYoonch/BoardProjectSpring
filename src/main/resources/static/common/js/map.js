@@ -33,6 +33,10 @@ const mapLib = {
             if(!Array.isArray(marker)) marker = [marker];
 
             const markers = marker.map(m => {
+
+                /* 마커 이미지 처리 */
+                const mi = markerImage ? markerImage : m.image;
+
                 const _marker = new kakao.maps.Marker({
                     position: new kakao.maps.LatLng(m.lat, m.lng),
                 });
