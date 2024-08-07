@@ -16,6 +16,7 @@ public class TourController implements ExceptionProcessor {
     @GetMapping("/view/{id}")
     public String view(@PathVariable Long id, Model model) {
 
+        model.addAttribute("addCommonScript", List.of("map"));
         model.addAttribute("addScript", List.of("tour/view"));
         return "front/tour/view";
     }
