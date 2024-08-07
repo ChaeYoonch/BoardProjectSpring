@@ -20,7 +20,7 @@ window.addEventListener("DOMContentLoaded", function() {
 
         map = new kakao.maps.Map(mapEl, mapOption);
 
-        const markerPos = new kakao.maps.LatLng(latitude, longitude); // 좌표
+        const markerPos = new kakao.maps.LatLng(latitude, longitude); // 좌표 **
         const marker = new kakao.maps.Marker({
             position: markerPos
         });
@@ -38,7 +38,7 @@ window.addEventListener("DOMContentLoaded", function() {
 
     function  mapProcess(map) {
         // 지도 클릭 시 좌표 정보
-        kakao.maps.event.addListener(map, 'click', function (e) {
+        kakao.maps.event.addListener(map, 'click', function (e) { // ** 객체 만든 것!
             console.log(e);
         });
     }
