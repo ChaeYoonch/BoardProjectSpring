@@ -19,5 +19,11 @@ const commonLib = {
         if (!(data instanceof FormData) && typeof data !== 'string' && data instanceof Object) { // 직렬화
             data = JSON.stringify(data);
         }
+
+        const options = {
+            method
+        };
+
+        if (data)
     }
 };
