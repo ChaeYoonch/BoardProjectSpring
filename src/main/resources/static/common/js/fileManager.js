@@ -27,6 +27,8 @@ const fileManager = {
                 formData.append("location", location.trim());
             }
 
+            const { ajaxLoad } = commonLib; // 비구조 할당
+
         } catch (e) {
             console.log(e);
             alert(e.message);
