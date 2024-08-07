@@ -17,5 +17,7 @@ window.addEventListener("DOMContentLoaded", function() {
         const marker = new kakao.maps.Marker({
             position: markerPos
         });
+
+        marker.setMap(map); // 마커 표기
     });
 })
