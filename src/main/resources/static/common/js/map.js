@@ -7,7 +7,7 @@ const mapLib = {
      * @param options : 옵션
      *                 - center : { lat: 위도, lng: 경도 } - 필수
      *                 - zoom : 확대 정도 (1~10) -> 숫자가 작을수록 확대
-     *                 - marker : [{ lat: 위도, lng: 경도, info: html 데이터 (인포윈도우로 출력) }]
+     *                 - marker : [{ lat: 위도, lng: 경도, info: html 데이터 (인포윈도우로 출력), image: 이미지 주소 }]
      */
      load(mapId, width= 300, height= 300, options) {
             const mapEl = document.getElementById(mapId);
