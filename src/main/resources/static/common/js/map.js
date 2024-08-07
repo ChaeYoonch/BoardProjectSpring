@@ -17,8 +17,8 @@ const mapLib = {
             mapEl.style.width = `${width}px`;
             mapEl.style.height = `${height}px`;
 
+        const { center, marker } = options;
         /* 지도 가운데 좌표 처리 S */
-        const { center } = options;
         const zoom = options?.zoom ?? 3; // 기본값 = 3 | optional chaing 옵셔널 체이닝 연산자
         const position = new kakao.maps.LatLng(center.lat, center.lng); // 위도, 경도 값 설정
         const map = new kakao.maps.Map(mapEl, {
