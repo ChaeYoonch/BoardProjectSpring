@@ -11,7 +11,8 @@ const commonLib = {
             return;
         }
 
-        const csrfToken = document.querySelector("mata[name='csrf_token']").content.trim(); // trim() 으로 공백 제거
+        const csrfToken = document.querySelector("mata[name='csrf_token']")?.content?.trim(); // trim() 으로 공백 제거
+        const csrfHeader = document.querySelector("mata[name='csrf_header']")?.content?.trim();
 
         method = method.toUpperCase();
         if (method === 'GET') {
