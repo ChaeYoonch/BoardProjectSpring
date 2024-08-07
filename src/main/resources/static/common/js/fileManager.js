@@ -11,7 +11,7 @@ const fileManager = {
 
         } catch (e) {
             console.log(e);
-            alert()
+            alert(e.message);
         }
     },
     /**
