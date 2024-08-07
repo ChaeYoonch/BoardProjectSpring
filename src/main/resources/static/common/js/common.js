@@ -28,6 +28,7 @@ const commonLib = {
 
         if (csrfHeader && csrfToken) {
             headers = headers ?? {};
+            headers[csrfHeader] = csrfToken;
         }
 
         const options = {
