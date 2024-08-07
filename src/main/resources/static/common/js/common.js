@@ -1,6 +1,6 @@
 const commonLib = {
     /**
-     *
+     * ajax 요청 공통
      * @param url
      * @param method
      * @param data
@@ -10,5 +10,6 @@ const commonLib = {
         if (!url) {
             return;
         }
+
     }
 };
