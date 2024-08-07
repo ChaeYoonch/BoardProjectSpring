@@ -21,6 +21,7 @@ import java.util.UUID;
 public class FileUploadService {
 
     private final FileInfoRepository fileInfoRepository;
+    private final FileInfoService fileInfoService; // 파일 경로 자동 완성
     private final FileProperties properties; // 경로 설정용
 
     public List<FileInfo> upload(MultipartFile[] files, String gid, String location) {
