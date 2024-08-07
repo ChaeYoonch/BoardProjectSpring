@@ -11,5 +11,9 @@ const commonLib = {
             return;
         }
 
+        method = method.toUpperCase();
+        if (method === 'GET') {
+
+        }
     }
 };
