@@ -21,14 +21,15 @@ window.addEventListener("DOMContentLoaded", function() {
         });
 
         marker.setMap(map); // 마커 표기 -> IP 기반이므로 정확하지는 않음
+        mapProcess(map);
     });
 
     // 지도 클릭 시 좌표 정보
-    if (map) {
+    /*if (map) {
         kakao.maps.event.addListener(map, 'click', function (e) {
             console.log(e);
         });
-    } // endif
+    } // endif */
 
     function  mapProcess(map) {
 
