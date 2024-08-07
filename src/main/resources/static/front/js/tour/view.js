@@ -20,9 +20,9 @@ window.addEventListener("DOMContentLoaded", function() {
 
         map = new kakao.maps.Map(mapEl, mapOption);
 
-        const markerPos = new kakao.maps.LatLng(latitude, longitude); // 좌표 **
+        const makerPos = new kakao.maps.LatLng(latitude, longitude); // 좌표 **
         const marker = new kakao.maps.Marker({
-            position: markerPos
+            position: makerPos
         });
 
         marker.setMap(map); // 마커 표기 -> IP 기반이므로 정확하지는 않음
@@ -39,7 +39,12 @@ window.addEventListener("DOMContentLoaded", function() {
     function  mapProcess(map) {
         // 지도 클릭 시 좌표 정보
         kakao.maps.event.addListener(map, 'click', function (e) { // ** 객체 만든 것!
-            console.log(e);
+            const latLnt = e.latLnt;
+            const marker = new kakao.maps.Marker({
+                position: latLng
+            });
+
+            marker.setMap(map);
         });
     }
 });
