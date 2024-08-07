@@ -20,6 +20,11 @@ window.addEventListener("DOMContentLoaded", function() {
     markers.forEach(marker => marker.setMap(map));
 
     const removeEls = document.getElementsByClassName("remove");
+    for (let i = 0; i < removeEls.length; i++) {
+        removeEls[i].addEventListener("click", function () {
+
+        });
+    }
 
     /*
     let map;
