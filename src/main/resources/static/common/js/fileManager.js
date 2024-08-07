@@ -24,7 +24,7 @@ const fileManager = {
             }
 
             if (location && location.trim()) {// 값이 있을 때만 설정
-
+                formData.append("location", location.trim());
             }
 
         } catch (e) {
