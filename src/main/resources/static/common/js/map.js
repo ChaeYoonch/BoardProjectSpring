@@ -15,7 +15,7 @@ const mapLib = {
 
         /* 지도 가운데 좌표 처리 S */
         const { center } = options;
-        const zoom = options?.zoom ?? 3; // 기본값 = 3
+        const zoom = options?.zoom ?? 3; // 기본값 = 3 | optional chaing 옵셔널 체이닝 연산자
         const position = new kakao.maps.LatLng(center.lat, center.lng);
         const map = new kakao.maps.Map(mapEl, {
             center: position,
