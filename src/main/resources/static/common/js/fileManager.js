@@ -23,7 +23,9 @@ const fileManager = {
                 formData.append("file", file);
             }
 
-            if (location && location.trim()) // 값이 있을 때만 설정
+            if (location && location.trim()) {// 값이 있을 때만 설정
+
+            }
 
         } catch (e) {
             console.log(e);
