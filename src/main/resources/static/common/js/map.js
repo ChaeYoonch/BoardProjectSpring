@@ -10,5 +10,6 @@ const mapLib = {
             if (!mapEl) return;
 
             mapEl.style.width = `${width}px`;
+            mapEl.style.height = `${height}px`;
      }
 };
